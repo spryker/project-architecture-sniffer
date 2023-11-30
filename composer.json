@@ -1,0 +1,61 @@
+{
+  "name": "vitaliiivanovspryker/project-architecture-sniffer",
+  "type": "library",
+  "description": "Spryker Project Architecture Sniffer",
+  "homepage": "https://spryker.com",
+  "license": "MIT",
+  "require": {
+    "php": ">=8.0",
+    "spryker/architecture-sniffer": "^0.5.7"
+  },
+  "require-dev": {
+    "codeception/codeception": "^4.1",
+    "codeception/module-asserts": "^1.3",
+    "phpstan/phpstan": "^1.0.0",
+    "spryker/code-sniffer": "*",
+    "symfony/var-dumper": "^4.0"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "config": {
+    "sort-packages": true,
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    }
+  },
+  "keywords": [
+    "framework",
+    "sniffer",
+    "architecture",
+    "standards",
+    "spryker"
+  ],
+  "authors": [
+    {
+      "name": "Spryker",
+      "homepage": "https://spryker.com"
+    }
+  ],
+  "support": {
+    "source": "https://github.com/vitaliiivanovspryker/project-architecture-sniffer"
+  },
+  "autoload": {
+    "psr-4": {
+      "ProjectArchitectureSniffer\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "ProjectArchitectureSnifferTest\\": "tests/"
+    }
+  },
+  "scripts": {
+    "cs-check": "phpcs --colors -p -s --extensions=php --standard=vendor/spryker/code-sniffer/Spryker/ruleset.xml --ignore=/tests/_data/,/_support/ src/ tests/",
+    "cs-fix": "phpcbf --colors -p --extensions=php --standard=vendor/spryker/code-sniffer/Spryker/ruleset.xml --ignore=/tests/_data/,/_support/ src/ tests/",
+    "stan": "phpstan analyze",
+    "test": "codecept build && codecept run"
+  },
+  "include-path": [
+    "src/"
+  ]
+}

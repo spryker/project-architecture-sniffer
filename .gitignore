@@ -1,0 +1,11 @@
+.DS_Store
+/vendor/*
+.idea/*
+composer.phar
+composer.lock
+phpunit.phar
+
+tests/Common/_support/
+tests/Zed/_support/
+tests/Shared/_support/
+tests/_output/
