@@ -1,0 +1,194 @@
+<?xml version="1.0"?>
+<ruleset name="Spryker"
+         xmlns="http://pmd.sf.net/ruleset/1.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://pmd.sf.net/ruleset/1.0.0
+                     http://pmd.sf.net/ruleset_xml_schema.xsd"
+         xsi:noNamespaceSchemaLocation="
+                     http://pmd.sf.net/ruleset_xml_schema.xsd">
+    <description>
+        This ruleset asserts common architecture conventions for Spryker project.
+    </description>
+
+    <rule
+            name="LayerAccessRule"
+            message="Access: {0}"
+            class="ArchitectureSniffer\Common\LayerAccessRule">
+
+        <priority>1</priority>
+    </rule>
+
+    <rule
+            name="ImplementsApiInheritDocRule"
+            message="Access: {0}"
+            class="ArchitectureSniffer\Common\ImplementsApiInheritDocRule">
+
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            name="GetterReturnTypeRule"
+            message="{0}"
+            class="ArchitectureSniffer\Common\Method\GetterReturnTypeRule">
+
+        <priority>1</priority>
+    </rule>
+
+    <rule
+            name="ExistsPostfixRule"
+            message="{0}"
+            class="ArchitectureSniffer\Common\Method\ExistsPostfixRule">
+
+        <priority>1</priority>
+    </rule>
+
+    <rule
+            name="ExternalMethodExtensionReturnTypeRule"
+            message="{0}"
+            class="ArchitectureSniffer\Common\Method\ExternalMethodExtensionReturnTypeRule">
+
+        <priority>1</priority>
+    </rule>
+
+    <!-- COMMON FACTORY RULES -->
+    <rule
+            name="FactoryGetContainNoNewRule"
+            message="Factories: {0}"
+            class="ArchitectureSniffer\Common\Factory\FactoryGetContainNoNewRule">
+
+        <priority>1</priority>
+    </rule>
+
+    <rule
+            name="FactoryMethodReturnInterfaceRule"
+            message="{0}"
+            class="ArchitectureSniffer\Common\Factory\FactoryMethodReturnInterfaceRule">
+
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            name="FactoryCreateContainOneNewRule"
+            message="{0}"
+            class="ArchitectureSniffer\Common\Factory\FactoryCreateContainOneNewRule">
+
+        <priority>1</priority>
+    </rule>
+
+    <rule
+            name="FactoryNoLoopsRule"
+            message="Factories: {0}"
+            class="ArchitectureSniffer\Common\Factory\FactoryNoLoopsRule">
+
+        <priority>1</priority>
+    </rule>
+
+    <rule
+            name="FactoryOnlyGetAndCreateRule"
+            message="Factories: {0}"
+            class="ArchitectureSniffer\Common\Factory\FactoryOnlyGetAndCreateRule">
+
+        <priority>1</priority>
+    </rule>
+
+    <rule
+            name="FactoryNoLogicRule"
+            message="Factories: {0}"
+            class="ArchitectureSniffer\Common\Factory\FactoryNoLogicRule">
+
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            name="FactoryOnlyPublicMethodsRule"
+            message="Factories: {0}"
+            class="ArchitectureSniffer\Common\Factory\FactoryOnlyPublicMethodsRule">
+
+        <priority>3</priority>
+    </rule>
+
+    <rule
+        name="FactoryPropelQueryMethodNameRule"
+        message="Factories: {0}"
+        class="ArchitectureSniffer\Common\Factory\FactoryPropelQueryMethodNameRule">
+
+        <priority>3</priority>
+    </rule>
+
+    <!-- COMMON COMMUNICATION RULES -->
+    <rule
+        name="CommunicationControllerRule"
+        message="Controller: {0}"
+        class="ArchitectureSniffer\Common\Communication\Controller\CommunicationControllerRule">
+
+        <priority>1</priority>
+    </rule>
+
+
+    <!-- COMMON COMMUNICATION PLUGIN RULES -->
+    <rule
+            name="PluginSuffixRule"
+            message="Plugin - Plugins must be suffixed with &quot;Plugin&quot; and PluginTests with &quot;PluginTest&quot;! Please check: &quot;{0}&quot;"
+            class="ArchitectureSniffer\Common\Plugin\PluginSuffixRule">
+
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            name="PluginInterfaceSuffixRule"
+            message="Plugin - Plugin interfaces must be suffixed with &quot;PluginInterface&quot;! Please check: &quot;{0}&quot;"
+            class="ArchitectureSniffer\Common\Plugin\PluginInterfaceSuffixRule">
+
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            name="NewPluginExtensionModuleRule"
+            message="Plugin: {0}"
+            class="ArchitectureSniffer\Common\Plugin\NewPluginExtensionModuleRule">
+
+        <priority>3</priority>
+    </rule>
+    <!-- EOF COMMON COMMUNICATION PLUGIN RULES -->
+
+    <!-- COMMON BRIDGE RULES -->
+    <rule
+            name="BridgeNameRule"
+            message="Bridges: {0}"
+            class="ArchitectureSniffer\Common\Bridge\BridgeNameRule">
+
+        <priority>3</priority>
+    </rule>
+    <rule
+            name="BridgePathRule"
+            message="Bridges: {0}"
+            class="ArchitectureSniffer\Common\Bridge\BridgePathRule">
+
+        <priority>3</priority>
+    </rule>
+    <rule
+            name="BridgeMethodsRule"
+            message="Bridges: {0}"
+            class="ArchitectureSniffer\Common\Bridge\BridgeMethodsRule">
+
+        <priority>2</priority>
+    </rule>
+    <rule
+        name="BridgeFacadeMethodsRule"
+        message="Bridges: {0}"
+        class="ArchitectureSniffer\Common\Bridge\BridgeFacadeMethodsRule">
+
+        <priority>2</priority>
+    </rule>
+    <rule
+        name="BridgeMethodsInterfaceRule"
+        message="Bridges: {0}"
+        class="ArchitectureSniffer\Common\Bridge\BridgeMethodsInterfaceRule">
+
+        <priority>2</priority>
+    </rule>
+    <!-- EOF COMMON BRIDGE RULES -->
+
+    <!-- EOF COMMON COMMUNICATION RULES -->
+
+</ruleset>

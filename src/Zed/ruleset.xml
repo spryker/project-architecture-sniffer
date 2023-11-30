@@ -1,0 +1,154 @@
+<?xml version="1.0"?>
+<ruleset name="Spryker Zed"
+         xmlns="http://pmd.sf.net/ruleset/1.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://pmd.sf.net/ruleset/1.0.0
+                     http://pmd.sf.net/ruleset_xml_schema.xsd"
+         xsi:noNamespaceSchemaLocation="
+                     http://pmd.sf.net/ruleset_xml_schema.xsd">
+    <description>
+        Asserting clean code architecture with Spryker project.
+    </description>
+
+    <!-- BUSINESS FACADE RULES -->
+    <rule
+            name="AllMethodsPublicInFacadeRule"
+            message="Zed Business Layer - Facade: {0}"
+            class="ArchitectureSniffer\Zed\Business\Facade\AllMethodsPublicInFacadeRule">
+
+        <priority>1</priority>
+    </rule>
+
+    <rule
+            name="FacadeArgumentsNotAllowedUseEntityTransferRule"
+            message="Zed Business Layer - Facade: {0}"
+            class="ArchitectureSniffer\Zed\Business\Facade\FacadeArgumentsNotAllowedUseEntityTransferRule">
+
+        <priority>1</priority>
+    </rule>
+
+    <rule
+            name="FacadeArgumentsRule"
+            message="Zed Business Layer - Facade: {0}"
+            class="ArchitectureSniffer\Zed\Business\Facade\FacadeArgumentsRule">
+
+        <priority>1</priority>
+    </rule>
+
+    <rule
+            name="FacadeInterfaceRule"
+            message="Zed Business Layer - Facade: {0}"
+            class="ArchitectureSniffer\Zed\Business\Facade\FacadeInterfaceRule">
+
+        <priority>1</priority>
+    </rule>
+
+    <rule
+            name="FacadeNoLogicRule"
+            message="Zed Business Layer - Facade: {0}"
+            class="ArchitectureSniffer\Zed\Business\Facade\FacadeNoLogicRule">
+
+        <priority>1</priority>
+    </rule>
+
+    <rule
+            name="FacadeReturnValueRule"
+            message="Zed Business Layer - Facade: {0}"
+            class="ArchitectureSniffer\Zed\Business\Facade\FacadeReturnValueRule">
+
+        <priority>1</priority>
+    </rule>
+
+    <rule
+            name="FacadeRule"
+            message="Zed Business Layer - Facade: {0}"
+            class="ArchitectureSniffer\Zed\Business\Facade\FacadeRule">
+
+        <priority>1</priority>
+    </rule>
+
+    <rule
+            name="FacadeRule"
+            message="Zed Business Layer - Facade: {0}"
+            class="ArchitectureSniffer\Zed\Business\Facade\FacadeSingleFactoryCallRule">
+
+        <priority>1</priority>
+    </rule>
+
+    <rule
+            name="BridgeConstructorArgumentsRule"
+            message="Zed Dependency Bridge - Bridge: {0}"
+            class="ArchitectureSniffer\Zed\Dependency\Bridge\BridgeConstructorArgumentsRule">
+
+        <priority>1</priority>
+    </rule>
+
+    <rule
+        name="BridgeConstructorArgumentTypehintsRule"
+        message="Zed Dependency Bridge - Bridge: {0}"
+        class="ArchitectureSniffer\Zed\Dependency\Bridge\BridgeConstructorArgumentTypehintsRule">
+
+        <priority>1</priority>
+    </rule>
+
+    <rule
+        name="ZedDependencyProviderMethodNameRule"
+        message="Zed DependencyProvider - DependencyProvider: {0}"
+        class="ArchitectureSniffer\Zed\DependencyProvider\DependencyProviderMethodNameRule">
+
+        <priority>3</priority>
+    </rule>
+
+    <!-- BUSINESS DIRECTORY RULES -->
+    <rule
+            name="ZedBusinessDirectoryNoModelRule"
+            message="Zed Business - Directory: {0}"
+            class="ArchitectureSniffer\Zed\Business\Directory\DirectoryNoModelRule">
+
+        <priority>3</priority>
+    </rule>
+
+    <!-- COMMUNICATION PLUGIN RULES -->
+    <rule
+        name="PluginArgumentsNotAllowedUseEntityTransferRule"
+        message="Zed Communication Layer - Plugin: {0}"
+        class="ArchitectureSniffer\Zed\Communication\Plugin\PluginArgumentsNotAllowedUseEntityTransferRule">
+
+        <priority>3</priority>
+    </rule>
+
+    <!-- Zed DependencyProvider - RFC Propel Query -->
+    <rule
+        name="ZedDependencyProviderPropelQueryConstantNameRule"
+        message="Zed DependencyProvider - DependencyProvider: {0}"
+        class="ArchitectureSniffer\Zed\DependencyProvider\DependencyProviderPropelQueryConstantNameRule">
+
+        <priority>3</priority>
+    </rule>
+    <rule
+        name="ZedDependencyProviderPropelQueryMethodNameRule"
+        message="Zed DependencyProvider - DependencyProvider: {0}"
+        class="ArchitectureSniffer\Zed\DependencyProvider\DependencyProviderPropelQueryMethodNameRule">
+
+        <priority>3</priority>
+    </rule>
+
+    <!-- Zed Repository - RFC Propel Query -->
+    <rule
+        name="ZedPersistenceRepositoryPropelQueryJoinRule"
+        message="Zed Persistence - Repository: {0}"
+        class="ArchitectureSniffer\Zed\Persistence\Repository\RepositoryPropelQueryJoinRule">
+
+        <priority>4</priority>
+    </rule>
+
+    <!-- Zed Persistence - RFC Spy Entity -->
+    <rule
+        name="SpyEntityUsageRule"
+        message="Zed Persistence Layer - Spy Entity: {0}"
+        class="ArchitectureSniffer\Zed\Persistence\SpyEntityUsageRule">
+
+        <priority>3</priority>
+    </rule>
+
+</ruleset>

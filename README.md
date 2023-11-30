@@ -10,8 +10,7 @@
 
 Architecture Sniffer for Spryker projects.
 
-[//]: # ()
-[//]: # ()
+
 [//]: # (## Priority Levels)
 
 [//]: # ()
@@ -27,30 +26,38 @@ Architecture Sniffer for Spryker projects.
 [//]: # ()
 [//]: # (Note: Lower priorities &#40;higher numbers&#41; always include the higher priorities &#40;lower numbers&#41;.)
 
-[//]: # ()
-[//]: # (## Usage)
+## Usage
 
-[//]: # ()
-[//]: # (Make sure you include the sniffer as `require-dev` dependency:)
+Make sure you include the sniffer as `require-dev` dependency:
+```
+composer require --dev vitaliiivanovspryker/project-architecture-sniffer:dev-main
+```
 
-[//]: # (```)
+### Spryker Usage
 
-[//]: # (composer require --dev spryker/architecture-sniffer)
+```php
+namespace Pyz\Zed\Development;
 
-[//]: # (```)
+class DevelopmentConfig extends \Spryker\Zed\Development\DevelopmentConfig
+{
+    public function getArchitectureSnifferRuleset(): string
+    {
+        $vendorDir = APPLICATION_VENDOR_DIR . DIRECTORY_SEPARATOR;
 
-[//]: # ()
-[//]: # (### Spryker Usage)
+        return $vendorDir . 'vitaliiivanovspryker/project-architecture-sniffer/src/ruleset.xml';
+    }
+}
+```
 
-[//]: # (When using Spryker you can use the Spryker CLI console command for it:)
+When using Spryker you can use the Spryker CLI console command for it:
 
-[//]: # (```)
+```
 
-[//]: # (console code:sniff:architecture [-m ModuleName] [optional-sub-path] -v [-p priority])
+console code:sniff:architecture [-m ModuleName] [optional-sub-path] -v [-p priority]
 
-[//]: # (```)
+```
 
-[//]: # (Verbose output is recommended here.)
+Verbose output is recommended here.
 
 [//]: # ()
 [//]: # (### Manual Usage)

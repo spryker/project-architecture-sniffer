@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<ruleset name="Spryker"
+<ruleset name="SprykerProject"
          xmlns="http://pmd.sf.net/ruleset/1.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://pmd.sf.net/ruleset/1.0.0
@@ -20,6 +20,20 @@
     <exclude-pattern>*/Persistence/Map/*</exclude-pattern>
     <exclude-pattern>*/Orm/Propel/*</exclude-pattern>
     <exclude-pattern>*/Generated/*</exclude-pattern>
+
+    <rule ref="Yves/ruleset.xml" />
+    <rule ref="Client/ruleset.xml" />
+    <rule ref="Common/ruleset.xml" />
+    <rule ref="Shared/ruleset.xml" />
+    <rule ref="Zed/ruleset.xml" />
+    <rule ref="Service/ruleset.xml" />
+
+    <report>
+        <log xmlns="https://phpmd.org/schema/logging"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="https://phpmd.org/schema/logging https://phpmd.org/schema/logging/log.xsd"
+             class="Namespace\To\Your\CustomReportClass" />
+    </report>
 
 
 </ruleset>
