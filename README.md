@@ -11,20 +11,24 @@
 Architecture Sniffer for Spryker projects.
 
 
-[//]: # (## Priority Levels)
+## Priority Levels
 
-[//]: # ()
-[//]: # (- `1`: API and critical)
 
-[//]: # (- `2`: Non critical &#40;nice to have&#41;)
+- `1`: Сritical (stop it)
 
-[//]: # (- `3`: Experimental &#40;inspected code needs further fixing&#41;)
+- `2`: Major (it is not a Spryker project)
 
-[//]: # ()
-[//]: # (We use and recommend minimum priority `2` by default for local and CI checks.)
+- `3`: Medium (better to have)
 
-[//]: # ()
-[//]: # (Note: Lower priorities &#40;higher numbers&#41; always include the higher priorities &#40;lower numbers&#41;.)
+- `4`: Minor (nice to have)
+
+- `5`: Spryker Core (code matches Spryker Architecture Rules and even more)
+
+
+We recommend minimum priority `3` by default for local and CI checks.
+
+
+Note: Lower priorities (higher numbers) always include the higher priorities (lower numbers).
 
 ## Usage
 
@@ -59,16 +63,25 @@ console code:sniff:architecture [-m ModuleName] [optional-sub-path] -v [-p prior
 
 Verbose output is recommended here.
 
-[//]: # ()
-[//]: # (### Manual Usage)
 
-[//]: # (You can also manually run the Architecture Sniffer from console by using:)
+### Manual Usage
 
-[//]: # (```)
+You can also manually run the Project Architecture Sniffer from console by using:
 
-[//]: # (vendor/bin/phpmd src/Pyz/ &#40;xml|text|html&#41; vendor/spryker/architecture-sniffer/src/ruleset.xml --minimumpriority=2)
+```
 
-[//]: # (```)
+vendor/bin/phpmd src/Pyz/ (xml|text|html) vendor/vitaliiivanovspryker/project-architecture-sniffer/src/ruleset.xml --minimumpriority=2
+
+```
+
+### Debugging
+
+```
+docker/sdk cli -x
+
+PHPMD_ALLOW_XDEBUG=true vendor/bin/phpmd src/Pyz/ (xml|text|html) vendor/vitaliiivanovspryker/project-architecture-sniffer/src/ruleset.xml --minimumpriority=2
+
+```
 
 [//]: # ()
 [//]: # (Note: Lower priorities always include the higher priorities in the validation process.)

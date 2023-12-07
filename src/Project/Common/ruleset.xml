@@ -187,6 +187,13 @@
 
         <priority>2</priority>
     </rule>
+
+
+    <rule name="LocatorInDependencyProviderOnlyRule"
+          message="Factories: {0}"
+          class="ProjectArchitectureSniffer\Project\Common\LocatorInDependencyProviderOnlyRule">
+        <priority>1</priority>
+    </rule>
     <!-- EOF COMMON BRIDGE RULES -->
 
     <!-- EOF COMMON COMMUNICATION RULES -->

@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<ruleset name="Spryker Client"
+<ruleset name="Spryker Project Client"
          xmlns="http://pmd.sf.net/ruleset/1.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://pmd.sf.net/ruleset/1.0.0
@@ -15,7 +15,7 @@
         message="Client: {0}"
         class="ArchitectureSniffer\Client\ClientRule">
 
-        <priority>3</priority>
+        <priority>4</priority>
     </rule>
 
     <rule
@@ -23,7 +23,7 @@
         message="ClientInterface: {0}"
         class="ArchitectureSniffer\Client\ClientInterfaceRule">
 
-        <priority>3</priority>
+        <priority>4</priority>
     </rule>
 
     <rule
@@ -39,7 +39,7 @@
         message="Client: {0}"
         class="ArchitectureSniffer\Client\NoClientInFrontendModuleRule">
 
-        <priority>1</priority>
+        <priority>4</priority>
     </rule>
 
 </ruleset>
