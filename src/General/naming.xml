@@ -10,6 +10,40 @@
 
     <rule ref="vendor/phpmd/phpmd/src/main/resources/rulesets/naming.xml/LongClassName">
         <priority>3</priority>
+        <properties>
+            <property name="maximum" value="80"/>
+        </properties>
+    </rule>
+
+    <rule ref="vendor/phpmd/phpmd/src/main/resources/rulesets/naming.xml/ShortClassName">
+        <priority>3</priority>
+    </rule>
+
+    <rule ref="vendor/phpmd/phpmd/src/main/resources/rulesets/naming.xml/ShortVariable">
+        <priority>3</priority>
+    </rule>
+
+    <rule ref="vendor/phpmd/phpmd/src/main/resources/rulesets/naming.xml/LongVariable">
+        <priority>3</priority>
+        <properties>
+            <property name="maximum" description="The variable length reporting threshold" value="60"/>
+        </properties>
+    </rule>
+
+    <rule ref="vendor/phpmd/phpmd/src/main/resources/rulesets/naming.xml/ShortMethodName">
+        <priority>3</priority>
+    </rule>
+
+    <rule ref="vendor/phpmd/phpmd/src/main/resources/rulesets/naming.xml/ConstructorWithNameAsEnclosingClass">
+        <priority>3</priority>
+    </rule>
+
+    <rule ref="vendor/phpmd/phpmd/src/main/resources/rulesets/naming.xml/ConstantNamingConventions">
+        <priority>3</priority>
+    </rule>
+
+    <rule ref="vendor/phpmd/phpmd/src/main/resources/rulesets/naming.xml/BooleanGetMethodName">
+        <priority>4</priority>
     </rule>
 
 </ruleset>

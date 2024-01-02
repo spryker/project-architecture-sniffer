@@ -21,17 +21,18 @@
     <exclude-pattern>*/Orm/Propel/*</exclude-pattern>
     <exclude-pattern>*/Generated/*</exclude-pattern>
 
-    <rule ref="Project/Yves/ruleset.xml" />
-    <rule ref="Project/Client/ruleset.xml" />
-    <rule ref="Project/Common/ruleset.xml" />
-    <rule ref="Project/Shared/ruleset.xml" />
-    <rule ref="Project/Zed/ruleset.xml" />
-    <rule ref="Project/Service/ruleset.xml" />
     <rule ref="General/cleancode.xml" />
     <rule ref="General/codesize.xml" />
     <rule ref="General/controversial.xml" />
     <rule ref="General/design.xml" />
     <rule ref="General/naming.xml" />
     <rule ref="General/unusedcode.xml" />
+
+    <rule ref="Project/Client/ruleset.xml" />
+    <rule ref="Project/Service/ruleset.xml" />
+    <rule ref="Project/Shared/ruleset.xml" />
+    <rule ref="Project/Yves/ruleset.xml" />
+    <rule ref="Project/Zed/ruleset.xml" />
+    <rule ref="Project/Common/ruleset.xml" />
 
 </ruleset>

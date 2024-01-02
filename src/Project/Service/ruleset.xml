@@ -13,7 +13,7 @@
         message="Service: {0}"
         class="ArchitectureSniffer\Service\ServiceRule">
 
-        <priority>3</priority>
+        <priority>5</priority>
     </rule>
 
     <rule
@@ -21,7 +21,7 @@
         message="ServiceInterface: {0}"
         class="ArchitectureSniffer\Service\ServiceInterfaceRule">
 
-        <priority>3</priority>
+        <priority>5</priority>
     </rule>
 
     <rule
@@ -29,7 +29,7 @@
         message="DependencyProvider: {0}"
         class="ArchitectureSniffer\Service\DependencyProvider\DependencyProviderMethodNameRule">
 
-        <priority>1</priority>
+        <priority>3</priority>
     </rule>
 
 </ruleset>

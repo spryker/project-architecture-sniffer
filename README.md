@@ -70,7 +70,7 @@ You can also manually run the Project Architecture Sniffer from console by using
 
 ```
 
-vendor/bin/phpmd src/Pyz/ (xml|text|html) vendor/vitaliiivanovspryker/project-architecture-sniffer/src/ruleset.xml --minimumpriority=2
+vendor/bin/phpmd src/Pyz/ (xml|text|html) vendor/vitaliiivanovspryker/project-architecture-sniffer/src/ruleset.xml --minimumpriority 2
 
 ```
 
@@ -79,7 +79,7 @@ vendor/bin/phpmd src/Pyz/ (xml|text|html) vendor/vitaliiivanovspryker/project-ar
 ```
 docker/sdk cli -x
 
-PHPMD_ALLOW_XDEBUG=true vendor/bin/phpmd src/Pyz/ (xml|text|html) vendor/vitaliiivanovspryker/project-architecture-sniffer/src/ruleset.xml --minimumpriority=2
+PHPMD_ALLOW_XDEBUG=true vendor/bin/phpmd src/Pyz/ (xml|text|html) vendor/vitaliiivanovspryker/project-architecture-sniffer/src/ruleset.xml --minimumpriority 2
 
 ```
 

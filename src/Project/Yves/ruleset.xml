@@ -15,6 +15,6 @@
             message="DependencyProvider: {0}"
             class="ArchitectureSniffer\Yves\DependencyProvider\DependencyProviderMethodNameRule">
 
-        <priority>1</priority>
+        <priority>3</priority>
     </rule>
 </ruleset>

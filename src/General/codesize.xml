@@ -11,12 +11,32 @@
     </description>
 
     <rule ref="vendor/phpmd/phpmd/src/main/resources/rulesets/codesize.xml/CyclomaticComplexity">
-        <properties>
-            <property name="reportLevel" value="10"/>
-            <property name="showClassesComplexity" value="true"/>
-            <property name="showMethodsComplexity" value="true"/>
-        </properties>
         <priority>3</priority>
+    </rule>
+
+    <rule ref="vendor/phpmd/phpmd/src/main/resources/rulesets/codesize.xml/NPathComplexity">
+        <priority>3</priority>
+    </rule>
+
+    <rule ref="vendor/phpmd/phpmd/src/main/resources/rulesets/codesize.xml/ExcessiveClassComplexity">
+        <priority>3</priority>
+        <properties>
+            <property name="maximum" description="The maximum WMC tolerable for a class." value="100"/>
+        </properties>
+    </rule>
+
+    <rule ref="vendor/phpmd/phpmd/src/main/resources/rulesets/codesize.xml/ExcessiveMethodLength">
+        <priority>3</priority>
+        <properties>
+            <property name="minimum" description="The method size reporting threshold" value="128"/>
+        </properties>
+    </rule>
+
+    <rule ref="vendor/phpmd/phpmd/src/main/resources/rulesets/codesize.xml/ExcessiveParameterList">
+        <priority>3</priority>
+        <properties>
+            <property name="minimum" description="The parameter count reporting threshold" value="15"/>
+        </properties>
     </rule>
 
 </ruleset>

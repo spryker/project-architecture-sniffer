@@ -11,6 +11,26 @@
     </description>
 
     <rule ref="vendor/phpmd/phpmd/src/main/resources/rulesets/controversial.xml/Superglobals">
+        <priority>2</priority>
+    </rule>
+
+    <rule ref="vendor/phpmd/phpmd/src/main/resources/rulesets/controversial.xml/CamelCaseClassName">
+        <priority>3</priority>
+    </rule>
+
+    <rule ref="vendor/phpmd/phpmd/src/main/resources/rulesets/controversial.xml/CamelCasePropertyName">
+        <priority>3</priority>
+    </rule>
+
+    <rule ref="vendor/phpmd/phpmd/src/main/resources/rulesets/controversial.xml/CamelCaseMethodName">
+        <priority>3</priority>
+    </rule>
+
+    <rule ref="vendor/phpmd/phpmd/src/main/resources/rulesets/controversial.xml/CamelCaseParameterName">
+        <priority>3</priority>
+    </rule>
+
+    <rule ref="vendor/phpmd/phpmd/src/main/resources/rulesets/controversial.xml/CamelCaseVariableName">
         <priority>3</priority>
     </rule>
 

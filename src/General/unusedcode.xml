@@ -9,10 +9,16 @@
         The Unused Code Ruleset contains a collection of rules that find unused code.
     </description>
 
-
-    <rule ref="vendor/phpmd/phpmd/src/main/resources/rulesets/unusedcode.xml/UnusedLocalVariable">
-        <priority>3</priority>
+    <rule ref="vendor/phpmd/phpmd/src/main/resources/rulesets/unusedcode.xml/UnusedPrivateField">
+        <priority>4</priority>
     </rule>
 
+    <rule ref="vendor/phpmd/phpmd/src/main/resources/rulesets/unusedcode.xml/UnusedPrivateMethod">
+        <priority>4</priority>
+    </rule>
+
+    <rule ref="vendor/phpmd/phpmd/src/main/resources/rulesets/unusedcode.xml/UnusedLocalVariable">
+        <priority>4</priority>
+    </rule>
 
 </ruleset>

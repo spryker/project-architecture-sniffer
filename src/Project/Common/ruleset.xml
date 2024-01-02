@@ -15,7 +15,7 @@
             message="Access: {0}"
             class="ArchitectureSniffer\Common\LayerAccessRule">
 
-        <priority>1</priority>
+        <priority>2</priority>
     </rule>
 
     <rule
@@ -23,7 +23,7 @@
             message="Access: {0}"
             class="ArchitectureSniffer\Common\ImplementsApiInheritDocRule">
 
-        <priority>3</priority>
+        <priority>5</priority>
     </rule>
 
     <rule
@@ -31,7 +31,7 @@
             message="{0}"
             class="ArchitectureSniffer\Common\Method\GetterReturnTypeRule">
 
-        <priority>1</priority>
+        <priority>3</priority>
     </rule>
 
     <rule
@@ -39,7 +39,7 @@
             message="{0}"
             class="ArchitectureSniffer\Common\Method\ExistsPostfixRule">
 
-        <priority>1</priority>
+        <priority>4</priority>
     </rule>
 
     <rule
@@ -47,7 +47,7 @@
             message="{0}"
             class="ArchitectureSniffer\Common\Method\ExternalMethodExtensionReturnTypeRule">
 
-        <priority>1</priority>
+        <priority>4</priority>
     </rule>
 
     <!-- COMMON FACTORY RULES -->
@@ -56,7 +56,7 @@
             message="Factories: {0}"
             class="ArchitectureSniffer\Common\Factory\FactoryGetContainNoNewRule">
 
-        <priority>1</priority>
+        <priority>3</priority>
     </rule>
 
     <rule
@@ -64,7 +64,7 @@
             message="{0}"
             class="ArchitectureSniffer\Common\Factory\FactoryMethodReturnInterfaceRule">
 
-        <priority>3</priority>
+        <priority>5</priority>
     </rule>
 
     <rule
@@ -72,7 +72,7 @@
             message="{0}"
             class="ArchitectureSniffer\Common\Factory\FactoryCreateContainOneNewRule">
 
-        <priority>1</priority>
+        <priority>3</priority>
     </rule>
 
     <rule
@@ -80,7 +80,7 @@
             message="Factories: {0}"
             class="ArchitectureSniffer\Common\Factory\FactoryNoLoopsRule">
 
-        <priority>1</priority>
+        <priority>3</priority>
     </rule>
 
     <rule
@@ -88,7 +88,7 @@
             message="Factories: {0}"
             class="ArchitectureSniffer\Common\Factory\FactoryOnlyGetAndCreateRule">
 
-        <priority>1</priority>
+        <priority>3</priority>
     </rule>
 
     <rule
@@ -96,7 +96,7 @@
             message="Factories: {0}"
             class="ArchitectureSniffer\Common\Factory\FactoryNoLogicRule">
 
-        <priority>3</priority>
+        <priority>4</priority>
     </rule>
 
     <rule
@@ -104,7 +104,7 @@
             message="Factories: {0}"
             class="ArchitectureSniffer\Common\Factory\FactoryOnlyPublicMethodsRule">
 
-        <priority>3</priority>
+        <priority>4</priority>
     </rule>
 
     <rule
@@ -112,7 +112,7 @@
         message="Factories: {0}"
         class="ArchitectureSniffer\Common\Factory\FactoryPropelQueryMethodNameRule">
 
-        <priority>3</priority>
+        <priority>4</priority>
     </rule>
 
     <!-- COMMON COMMUNICATION RULES -->
@@ -121,7 +121,7 @@
         message="Controller: {0}"
         class="ArchitectureSniffer\Common\Communication\Controller\CommunicationControllerRule">
 
-        <priority>1</priority>
+        <priority>3</priority>
     </rule>
 
 
@@ -147,7 +147,7 @@
             message="Plugin: {0}"
             class="ArchitectureSniffer\Common\Plugin\NewPluginExtensionModuleRule">
 
-        <priority>3</priority>
+        <priority>4</priority>
     </rule>
     <!-- EOF COMMON COMMUNICATION PLUGIN RULES -->
 
@@ -157,36 +157,40 @@
             message="Bridges: {0}"
             class="ArchitectureSniffer\Common\Bridge\BridgeNameRule">
 
-        <priority>3</priority>
+        <priority>5</priority>
     </rule>
     <rule
             name="BridgePathRule"
             message="Bridges: {0}"
             class="ArchitectureSniffer\Common\Bridge\BridgePathRule">
 
-        <priority>3</priority>
+        <priority>5</priority>
     </rule>
     <rule
             name="BridgeMethodsRule"
             message="Bridges: {0}"
             class="ArchitectureSniffer\Common\Bridge\BridgeMethodsRule">
 
-        <priority>2</priority>
+        <priority>5</priority>
     </rule>
     <rule
         name="BridgeFacadeMethodsRule"
         message="Bridges: {0}"
         class="ArchitectureSniffer\Common\Bridge\BridgeFacadeMethodsRule">
 
-        <priority>2</priority>
+        <priority>5</priority>
     </rule>
     <rule
         name="BridgeMethodsInterfaceRule"
         message="Bridges: {0}"
         class="ArchitectureSniffer\Common\Bridge\BridgeMethodsInterfaceRule">
 
-        <priority>2</priority>
+        <priority>5</priority>
     </rule>
+
+    <!-- EOF COMMON BRIDGE RULES -->
+
+    <!-- EOF COMMON COMMUNICATION RULES -->
 
 
     <rule name="LocatorInDependencyProviderOnlyRule"
@@ -194,8 +198,5 @@
           class="ProjectArchitectureSniffer\Project\Common\LocatorInDependencyProviderOnlyRule">
         <priority>1</priority>
     </rule>
-    <!-- EOF COMMON BRIDGE RULES -->
-
-    <!-- EOF COMMON COMMUNICATION RULES -->
 
 </ruleset>

@@ -10,9 +10,32 @@
         The Clean Code ruleset contains rules that enforce a clean code base. This includes rules from SOLID and object calisthenics.
     </description>
 
+    <rule ref="vendor/phpmd/phpmd/src/main/resources/rulesets/cleancode.xml/UndefinedVariable" >
+        <priority>2</priority>
+    </rule>
+
+    <rule ref="vendor/phpmd/phpmd/src/main/resources/rulesets/cleancode.xml/ElseExpression" >
+        <priority>3</priority>
+    </rule>
+
+    <rule ref="vendor/phpmd/phpmd/src/main/resources/rulesets/cleancode.xml/IfStatementAssignment" >
+        <priority>3</priority>
+    </rule>
+
+    <rule ref="vendor/phpmd/phpmd/src/main/resources/rulesets/cleancode.xml/DuplicatedArrayKey" >
+        <priority>3</priority>
+    </rule>
+
+    <rule ref="vendor/phpmd/phpmd/src/main/resources/rulesets/cleancode.xml/ErrorControlOperator" >
+        <priority>3</priority>
+    </rule>
+
+    <rule ref="vendor/phpmd/phpmd/src/main/resources/rulesets/cleancode.xml/MissingImport" >
+        <priority>3</priority>
+    </rule>
 
     <rule ref="vendor/phpmd/phpmd/src/main/resources/rulesets/cleancode.xml/BooleanArgumentFlag" >
-        <priority>3</priority>
+        <priority>4</priority>
     </rule>
 
 </ruleset>

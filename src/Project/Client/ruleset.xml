@@ -15,7 +15,7 @@
         message="Client: {0}"
         class="ArchitectureSniffer\Client\ClientRule">
 
-        <priority>4</priority>
+        <priority>5</priority>
     </rule>
 
     <rule
@@ -23,7 +23,7 @@
         message="ClientInterface: {0}"
         class="ArchitectureSniffer\Client\ClientInterfaceRule">
 
-        <priority>4</priority>
+        <priority>5</priority>
     </rule>
 
     <rule
@@ -31,7 +31,7 @@
         message="DependencyProvider: {0}"
         class="ArchitectureSniffer\Client\DependencyProvider\DependencyProviderMethodNameRule">
 
-        <priority>1</priority>
+        <priority>3</priority>
     </rule>
 
     <rule
@@ -39,7 +39,7 @@
         message="Client: {0}"
         class="ArchitectureSniffer\Client\NoClientInFrontendModuleRule">
 
-        <priority>4</priority>
+        <priority>2</priority>
     </rule>
 
 </ruleset>
