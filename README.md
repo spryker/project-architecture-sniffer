@@ -74,6 +74,18 @@ vendor/bin/phpmd src/Pyz/ (xml|text|html) vendor/vitaliiivanovspryker/project-ar
 
 ```
 
+### Local Code Review Usage
+
+```
+
+vendor/bin/phpmd src json vendor/vitaliiivanovspryker/project-architecture-sniffer/src/ruleset.xml --minimumpriority 4 --reportfile results.json
+
+cp vendor/vitaliiivanovspryker/project-architecture-sniffer/tools/script.php script.php 
+
+php script.php
+
+```
+
 ### Debugging
 
 ```

@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<ruleset name="SprykerProject"
+<ruleset name="Spryker Project"
          xmlns="http://pmd.sf.net/ruleset/1.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://pmd.sf.net/ruleset/1.0.0
@@ -16,9 +16,7 @@
     <exclude-pattern>tests/_output</exclude-pattern>
     <exclude-pattern>tests/_support</exclude-pattern>
 
-    <exclude-pattern>*/Persistence/Base/*</exclude-pattern>
-    <exclude-pattern>*/Persistence/Map/*</exclude-pattern>
-    <exclude-pattern>*/Orm/Propel/*</exclude-pattern>
+    <exclude-pattern>*/Orm/*</exclude-pattern>
     <exclude-pattern>*/Generated/*</exclude-pattern>
 
     <rule ref="General/cleancode.xml" />
