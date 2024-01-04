@@ -80,7 +80,7 @@ vendor/bin/phpmd src/Pyz/ (xml|text|html) vendor/vitaliiivanovspryker/project-ar
 
 vendor/bin/phpmd src json vendor/vitaliiivanovspryker/project-architecture-sniffer/src/ruleset.xml --minimumpriority 4 --reportfile results.json
 
-cp vendor/vitaliiivanovspryker/project-architecture-sniffer/tools/script.php script.php 
+cp vendor/vitaliiivanovspryker/project-architecture-sniffer/tools/script.php script.php
 
 php script.php
 
@@ -94,6 +94,12 @@ docker/sdk cli -x
 PHPMD_ALLOW_XDEBUG=true vendor/bin/phpmd src/Pyz/ (xml|text|html) vendor/vitaliiivanovspryker/project-architecture-sniffer/src/ruleset.xml --minimumpriority 2
 
 ```
+
+## Roadmap (expected rules)
+
+- Storage/Search modules are not supposed to make RPC calls to ZED. 
+
+
 
 [//]: # ()
 [//]: # (Note: Lower priorities always include the higher priorities in the validation process.)

@@ -42,4 +42,15 @@
         <priority>2</priority>
     </rule>
 
+
+    <!-- CUSTOM PROJECT ARCHITECTURE RULES -->
+
+    <rule
+        name="UnusedZedRequestInSearchAndStorageRule"
+        message="Client: {0}"
+        class="ProjectArchitectureSniffer\Project\Client\UnusedZedRequestInSearchAndStorageRule">
+
+        <priority>1</priority>
+    </rule>
+
 </ruleset>

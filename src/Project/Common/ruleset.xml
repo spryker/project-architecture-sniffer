@@ -193,10 +193,19 @@
     <!-- EOF COMMON COMMUNICATION RULES -->
 
 
+
+    <!-- CUSTOM PROJECT ARCHITECTURE RULES -->
+
     <rule name="LocatorInDependencyProviderOnlyRule"
-          message="Factories: {0}"
+          message="DependencyProvider: {0}"
           class="ProjectArchitectureSniffer\Project\Common\LocatorInDependencyProviderOnlyRule">
         <priority>1</priority>
+    </rule>
+
+    <rule name="SingletonInstanceInDependencyProviderOnlyRule"
+          message="DependencyProvider: {0}"
+          class="ProjectArchitectureSniffer\Project\Common\SingletonInstanceInDependencyProviderOnlyRule">
+        <priority>2</priority>
     </rule>
 
 </ruleset>
