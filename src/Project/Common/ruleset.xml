@@ -11,14 +11,6 @@
     </description>
 
     <rule
-            name="LayerAccessRule"
-            message="Access: {0}"
-            class="ArchitectureSniffer\Common\LayerAccessRule">
-
-        <priority>2</priority>
-    </rule>
-
-    <rule
             name="ImplementsApiInheritDocRule"
             message="Access: {0}"
             class="ArchitectureSniffer\Common\ImplementsApiInheritDocRule">
@@ -205,6 +197,22 @@
     <rule name="SingletonInstanceInDependencyProviderOnlyRule"
           message="DependencyProvider: {0}"
           class="ProjectArchitectureSniffer\Project\Common\SingletonInstanceInDependencyProviderOnlyRule">
+        <priority>2</priority>
+    </rule>
+
+    <rule
+        name="LayerAccessRule"
+        message="Access: {0}"
+        class="ProjectArchitectureSniffer\Project\Common\LayerAccessRule">
+
+        <priority>2</priority>
+    </rule>
+
+    <rule
+        name="OrmQueryAccessRule"
+        message="Access: {0}"
+        class="ProjectArchitectureSniffer\Project\Common\OrmQueryAccessRule">
+
         <priority>2</priority>
     </rule>
 

@@ -4,7 +4,6 @@ namespace ProjectArchitectureSniffer\Project\Client;
 
 use PHPMD\AbstractNode;
 use PHPMD\AbstractRule;
-use PHPMD\Node\MethodNode;
 use PHPMD\Rule\MethodAware;
 
 class UnusedZedRequestInSearchAndStorageRule extends AbstractRule implements MethodAware
