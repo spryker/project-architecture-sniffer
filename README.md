@@ -115,7 +115,7 @@ Run
 
 ```
 
-php composer install
+composer install
 
 ```
 
@@ -130,7 +130,7 @@ Make sure this repository is Spryker coding standard conform:
 
 ```
 
-composer run-script cs-check
+composer cs-check
 
 ```
 
@@ -138,7 +138,7 @@ If you want to fix the fixable errors, use
 
 ```
 
-composer run-script cs-fix
+composer cs-fix
 
 ```
 
@@ -146,7 +146,7 @@ If you want to run phpstan
 
 ```
 
-composer run-script stan
+composer stan
 
 ```
 

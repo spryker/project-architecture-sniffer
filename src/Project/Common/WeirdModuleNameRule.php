@@ -16,6 +16,19 @@ class WeirdModuleNameRule extends AbstractRule implements ClassAware
     /**
      * @var string
      */
+    public const RULE = 'Module name should not contain any weird words like test|dummy|example|antelope';
+
+    /**
+     * @return string
+     */
+    public function getDescription(): string
+    {
+        return static::RULE;
+    }
+
+    /**
+     * @var string
+     */
     protected const WEIRD_MODULE_NAME_PATTER = '(^[\w]+\\\\(Zed|Client|Yves|Glue|Service|Shared)\\\\[\w]*(?i:test|dummy|example|antelope)[\w]*\\\\.+)';
 
     /**

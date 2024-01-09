@@ -15,6 +15,19 @@ use PHPMD\Rule\ClassAware;
 class OrmAccessRule extends AbstractRule implements ClassAware
 {
     /**
+     * @var string
+     */
+    protected const RULE = 'Defines rules of calls: No call from Orm Query to Zed Business, No call from Orm Entity to Zed Business, No call from Orm Query to Zed Communication.';
+
+    /**
+     * @return string
+     */
+    public function getDescription(): string
+    {
+        return static::RULE;
+    }
+
+    /**
      * @var array
      */
     protected $patterns = [

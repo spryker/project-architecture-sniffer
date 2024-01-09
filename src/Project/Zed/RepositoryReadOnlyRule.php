@@ -16,6 +16,19 @@ class RepositoryReadOnlyRule extends AbstractRule implements MethodAware
     /**
      * @var string
      */
+    protected const RULE = 'Repository should not perform save|update|delete DB operations.';
+
+    /**
+     * @return string
+     */
+    public function getDescription(): string
+    {
+        return static::RULE;
+    }
+
+    /**
+     * @var string
+     */
     protected const REPOSITORY_PATTERN = '(^[\w]+\\\\Zed\\\\[\w]+\\\\Persistence\\\\[\w]+(Repository|RepositoryInterface))';
 
     /**

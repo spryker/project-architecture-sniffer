@@ -16,6 +16,19 @@ class SingletonInstanceInDependencyProviderOnlyRule extends AbstractRule impleme
     /**
      * @var string
      */
+    public const RULE = 'Singleton getInstance() initialisation should be in Dependency Provider only.';
+
+    /**
+     * @return string
+     */
+    public function getDescription(): string
+    {
+        return static::RULE;
+    }
+
+    /**
+     * @var string
+     */
     protected const GET_INSTANCE_METHOD_NAME = '/^(getInstance)$/';
 
     /**

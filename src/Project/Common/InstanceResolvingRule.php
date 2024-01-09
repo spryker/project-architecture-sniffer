@@ -16,7 +16,15 @@ class InstanceResolvingRule extends AbstractRule implements ClassAware
     /**
      * @var string
      */
-    public const RULE = 'Instance can not be initialized directly. Use Dependency Provider and Resolvers';
+    public const RULE = 'Repository|EntityManager|QueryContainer|Facade|DependencyProvider|Bridge|Client|Service instances can not be initialized directly with "new". Use Dependency Provider and Resolvers';
+
+    /**
+     * @return string
+     */
+    public function getDescription(): string
+    {
+        return static::RULE;
+    }
 
     /**
      * @var string

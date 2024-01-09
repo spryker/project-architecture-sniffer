@@ -16,6 +16,19 @@ class UnusedZedRequestInSearchAndStorageRule extends AbstractRule implements Met
     /**
      * @var string
      */
+    protected const RULE = 'There should be no Zed Request in Search And Storage Client.';
+
+    /**
+     * @return string
+     */
+    public function getDescription(): string
+    {
+        return static::RULE;
+    }
+
+    /**
+     * @var string
+     */
     protected const ZED_REQUEST_METHOD_NAME = '/^(zedRequest)$/';
 
     /**

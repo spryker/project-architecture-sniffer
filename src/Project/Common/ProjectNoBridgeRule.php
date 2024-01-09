@@ -14,6 +14,19 @@ use PHPMD\Rule\ClassAware;
 class ProjectNoBridgeRule extends AbstractRule implements ClassAware
 {
     /**
+     * @var string
+     */
+    public const RULE = 'Project should not use and depend on Bridge pattern.';
+
+    /**
+     * @return string
+     */
+    public function getDescription(): string
+    {
+        return static::RULE;
+    }
+
+    /**
      * @param \PHPMD\AbstractNode $node
      *
      * @return void

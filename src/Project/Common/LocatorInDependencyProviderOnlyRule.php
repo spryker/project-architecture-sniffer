@@ -16,6 +16,19 @@ class LocatorInDependencyProviderOnlyRule extends AbstractRule implements Method
     /**
      * @var string
      */
+    public const RULE = 'Locator should be used in Dependency Provider only';
+
+    /**
+     * @return string
+     */
+    public function getDescription(): string
+    {
+        return static::RULE;
+    }
+
+    /**
+     * @var string
+     */
     protected const LOCATOR_METHOD_NAMES = '/^(getLocator|locator)$/';
 
     /**

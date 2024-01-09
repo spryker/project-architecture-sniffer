@@ -16,7 +16,15 @@ class OrmNewEntityNotInCommunicationRule extends AbstractRule implements ClassAw
     /**
      * @var string
      */
-    public const RULE = 'Orm Entity can not be initialized in Zed Communication. Use Entity Manager!';
+    public const RULE = 'Orm Entity can not be initialized in Zed Communication. Use Entity Manager.';
+
+    /**
+     * @return string
+     */
+    public function getDescription(): string
+    {
+        return static::RULE;
+    }
 
     /**
      * @var string
