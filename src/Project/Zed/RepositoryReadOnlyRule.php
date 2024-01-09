@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * Copyright © 2016-present Spryker Systems GmbH. All rights reserved.
+ * Use of this software requires acceptance of the Evaluation License Agreement. See LICENSE file.
+ */
+
 namespace ProjectArchitectureSniffer\Project\Zed;
 
 use PHPMD\AbstractNode;
@@ -8,14 +13,25 @@ use PHPMD\Rule\MethodAware;
 
 class RepositoryReadOnlyRule extends AbstractRule implements MethodAware
 {
+    /**
+     * @var string
+     */
     protected const REPOSITORY_PATTERN = '(^[\w]+\\\\Zed\\\\[\w]+\\\\Persistence\\\\[\w]+(Repository|RepositoryInterface))';
 
+    /**
+     * @var array<string>
+     */
     protected const RESTRICTED_METHOD_POSTFIX = [
         'save',
         'update',
         'delete',
     ];
 
+    /**
+     * @param \PHPMD\AbstractNode $node
+     *
+     * @return void
+     */
     public function apply(AbstractNode $node): void
     {
         if (!$this->isRepository($node)) {
@@ -42,6 +58,11 @@ class RepositoryReadOnlyRule extends AbstractRule implements MethodAware
         }
     }
 
+    /**
+     * @param \PHPMD\AbstractNode $node
+     *
+     * @return bool
+     */
     protected function isRepository(AbstractNode $node): bool
     {
         $parent = $node->getNode()->getParent();

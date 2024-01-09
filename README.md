@@ -97,7 +97,6 @@ PHPMD_ALLOW_XDEBUG=true vendor/bin/phpmd src/Pyz/ (xml|text|html) vendor/vitalii
 
 ## Roadmap (expected rules)
 
--
 
 [//]: # ()
 [//]: # (Note: Lower priorities always include the higher priorities in the validation process.)

@@ -44,16 +44,10 @@
       "ProjectArchitectureSniffer\\": "src/"
     }
   },
-  "autoload-dev": {
-    "psr-4": {
-      "ProjectArchitectureSnifferTest\\": "tests/"
-    }
-  },
   "scripts": {
-    "cs-check": "phpcs --colors -p -s --extensions=php --standard=vendor/spryker/code-sniffer/Spryker/ruleset.xml --ignore=/tests/_data/,/_support/ src/ tests/",
-    "cs-fix": "phpcbf --colors -p --extensions=php --standard=vendor/spryker/code-sniffer/Spryker/ruleset.xml --ignore=/tests/_data/,/_support/ src/ tests/",
-    "stan": "phpstan analyze",
-    "test": "codecept build && codecept run"
+    "cs-check": "vendor/bin/phpcs --standard=vendor/spryker/code-sniffer/Spryker/ruleset.xml --ignore=/tests/_data/,/_support/ src/",
+    "cs-fix": "vendor/bin/phpcbf --colors -p --extensions=php --standard=vendor/spryker/code-sniffer/Spryker/ruleset.xml --ignore=/tests/_data/,/_support/ src/",
+    "stan": "vendor/bin/phpstan analyze"
   },
   "include-path": [
     "src/"

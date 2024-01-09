@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * Copyright © 2016-present Spryker Systems GmbH. All rights reserved.
+ * Use of this software requires acceptance of the Evaluation License Agreement. See LICENSE file.
+ */
+
 namespace ProjectArchitectureSniffer\Project\Common;
 
 use PHPMD\AbstractNode;
@@ -8,10 +13,21 @@ use PHPMD\Rule\ClassAware;
 
 class InstanceResolvingRule extends AbstractRule implements ClassAware
 {
+    /**
+     * @var string
+     */
     public const RULE = 'Instance can not be initialized directly. Use Dependency Provider and Resolvers';
 
+    /**
+     * @var string
+     */
     protected const INSTANCE_PATTERN = '([\w]+(Repository|EntityManager|QueryContainer|Facade|DependencyProvider|Bridge|Client|Service)$)';
 
+    /**
+     * @param \PHPMD\AbstractNode $node
+     *
+     * @return void
+     */
     public function apply(AbstractNode $node): void
     {
         foreach ($node->getMethods() as $methodNode) {
@@ -19,7 +35,6 @@ class InstanceResolvingRule extends AbstractRule implements ClassAware
             $allocatedExpressions = $methodNode->findChildrenOfType('AllocationExpression');
 
             foreach ($allocatedExpressions as $expression) {
-
                 if ($expression->getImage() !== 'new') {
                     continue;
                 }
@@ -36,7 +51,6 @@ class InstanceResolvingRule extends AbstractRule implements ClassAware
                         static::RULE,
                     );
                     $this->addViolation($methodNode, [$message]);
-
                 }
             }
         }

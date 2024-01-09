@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * Copyright © 2016-present Spryker Systems GmbH. All rights reserved.
+ * Use of this software requires acceptance of the Evaluation License Agreement. See LICENSE file.
+ */
+
 namespace ProjectArchitectureSniffer\Project\Zed;
 
 use PHPMD\AbstractNode;
@@ -30,6 +35,11 @@ class OrmAccessRule extends AbstractRule implements ClassAware
         ],
     ];
 
+    /**
+     * @param \PHPMD\AbstractNode $node
+     *
+     * @return void
+     */
     public function apply(AbstractNode $node)
     {
         $patterns = $this->collectPatterns($node);
@@ -44,6 +54,12 @@ class OrmAccessRule extends AbstractRule implements ClassAware
         }
     }
 
+    /**
+     * @param \PHPMD\AbstractNode $node
+     * @param array<string> $patterns
+     *
+     * @return void
+     */
     protected function applyPatterns(AbstractNode $node, array $patterns)
     {
         foreach ($node->getDependencies() as $dependency) {
@@ -71,6 +87,11 @@ class OrmAccessRule extends AbstractRule implements ClassAware
         }
     }
 
+    /**
+     * @param \PHPMD\Node\ClassNode $class
+     *
+     * @return array<string>
+     */
     protected function collectPatterns(ClassNode $class): array
     {
         $patterns = [];

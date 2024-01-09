@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * Copyright © 2016-present Spryker Systems GmbH. All rights reserved.
+ * Use of this software requires acceptance of the Evaluation License Agreement. See LICENSE file.
+ */
+
 namespace ProjectArchitectureSniffer\Project\Common;
 
 use PHPMD\AbstractNode;
@@ -8,19 +13,30 @@ use PHPMD\Rule\MethodAware;
 
 class LocatorInDependencyProviderOnlyRule extends AbstractRule implements MethodAware
 {
+    /**
+     * @var string
+     */
     protected const LOCATOR_METHOD_NAMES = '/^(getLocator|locator)$/';
+
+    /**
+     * @var string
+     */
     protected const CLASSES_ALLOWED_TO_USE_LOCATOR = '/DependencyProvider$/';
 
+    /**
+     * @param \PHPMD\AbstractNode $node
+     *
+     * @return void
+     */
     public function apply(AbstractNode $node): void
     {
         if ($this->isClassAllowedToUseLocator($node) === true) {
             return;
         }
-        
 
         foreach ($node->findChildrenOfType('MethodPostfix') as $classUsage) {
             $methodName = $classUsage->getNode()->getImage();
-            
+
             if ($this->isLocator($methodName) === false) {
                 continue;
             }
@@ -37,6 +53,11 @@ class LocatorInDependencyProviderOnlyRule extends AbstractRule implements Method
         }
     }
 
+    /**
+     * @param string $methodName
+     *
+     * @return bool
+     */
     protected function isLocator(string $methodName): bool
     {
         if (preg_match(static::LOCATOR_METHOD_NAMES, $methodName)) {
@@ -46,6 +67,11 @@ class LocatorInDependencyProviderOnlyRule extends AbstractRule implements Method
         return false;
     }
 
+    /**
+     * @param \PHPMD\AbstractNode $node
+     *
+     * @return bool
+     */
     protected function isClassAllowedToUseLocator(AbstractNode $node): bool
     {
         if (preg_match(static::CLASSES_ALLOWED_TO_USE_LOCATOR, $node->getParentName())) {

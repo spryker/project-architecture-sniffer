@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * Copyright © 2016-present Spryker Systems GmbH. All rights reserved.
+ * Use of this software requires acceptance of the Evaluation License Agreement. See LICENSE file.
+ */
+
 namespace ProjectArchitectureSniffer\Project\Zed;
 
 use PHPMD\AbstractNode;
@@ -8,12 +13,26 @@ use PHPMD\Rule\ClassAware;
 
 class OrmNewEntityNotInCommunicationRule extends AbstractRule implements ClassAware
 {
+    /**
+     * @var string
+     */
     public const RULE = 'Orm Entity can not be initialized in Zed Communication. Use Entity Manager!';
 
+    /**
+     * @var string
+     */
     protected const BUSINESS_AND_COMMUNICATION_PATTERN = '(^[\w]+\\\\Zed\\\\[\w]+\\\\Communication\\\\.+)';
 
+    /**
+     * @var string
+     */
     protected const ORM_ENTITY_PATTERN = '(^Orm\\\\Zed\\\\[\w]+\\\\Persistence\\\\(?!.*(?:(Query|TableMap))))';
 
+    /**
+     * @param \PHPMD\AbstractNode $node
+     *
+     * @return void
+     */
     public function apply(AbstractNode $node): void
     {
         if (!preg_match(static::BUSINESS_AND_COMMUNICATION_PATTERN, $node->getFullQualifiedName())) {
@@ -25,7 +44,6 @@ class OrmNewEntityNotInCommunicationRule extends AbstractRule implements ClassAw
             $allocatedExpressions = $methodNode->findChildrenOfType('AllocationExpression');
 
             foreach ($allocatedExpressions as $expression) {
-
                 if ($expression->getImage() !== 'new') {
                     continue;
                 }

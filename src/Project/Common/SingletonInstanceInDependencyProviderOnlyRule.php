@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * Copyright © 2016-present Spryker Systems GmbH. All rights reserved.
+ * Use of this software requires acceptance of the Evaluation License Agreement. See LICENSE file.
+ */
+
 namespace ProjectArchitectureSniffer\Project\Common;
 
 use PHPMD\AbstractNode;
@@ -8,9 +13,16 @@ use PHPMD\Rule\MethodAware;
 
 class SingletonInstanceInDependencyProviderOnlyRule extends AbstractRule implements MethodAware
 {
+    /**
+     * @var string
+     */
     protected const GET_INSTANCE_METHOD_NAME = '/^(getInstance)$/';
 
-    
+    /**
+     * @param \PHPMD\AbstractNode $node
+     *
+     * @return void
+     */
     public function apply(AbstractNode $node): void
     {
         if ($this->isDependencyProvider($node)) {
@@ -27,7 +39,7 @@ class SingletonInstanceInDependencyProviderOnlyRule extends AbstractRule impleme
             if ($this->isStaticCall($classUsage->getNode()->getParent()->getImage()) === false) {
                 continue;
             }
-            
+
             $this->addViolation(
                 $node,
                 [
@@ -49,7 +61,6 @@ class SingletonInstanceInDependencyProviderOnlyRule extends AbstractRule impleme
     {
         $parent = $node->getNode()->getParent();
         $className = $parent->getNamespaceName() . '\\' . $parent->getName();
-
 
         if (preg_match('/\\\\' . '(?:Client|Yves|Glue|Zed|Service)' . '\\\\.*\\\\\w+DependencyProvider$/', $className)) {
             return true;
@@ -73,7 +84,7 @@ class SingletonInstanceInDependencyProviderOnlyRule extends AbstractRule impleme
     }
 
     /**
-     * @param string $methodName
+     * @param string $callSymbol
      *
      * @return bool
      */

@@ -15,7 +15,6 @@ $convertedResults = [];
 
 foreach ($results['files'] as $fileResults) {
     foreach ($fileResults['violations'] as $violation) {
-
         $priorityKey = $violation['priority'];
         $ruleSetKey = $violation['ruleSet'];
 
@@ -30,10 +29,8 @@ foreach ($results['files'] as $fileResults) {
     }
 }
 
-
 $fileOutput = '';
 foreach ($convertedResults as $group => $convertedResult) {
-
     $fileOutput .= '=================================== ' . $group . ' ===================================' . PHP_EOL . PHP_EOL;
 
     ksort($convertedResult);
@@ -48,13 +45,11 @@ foreach ($convertedResults as $group => $convertedResult) {
         $fileOutput .= '========== ' . $priorityValue . ':' . PHP_EOL . PHP_EOL;
 
         foreach ($rulesetGroup as $ruleSetName => $ruleGroup) {
-
             $totalInRuleSet = 0;
 
             $fileOutput .= '===== ' . $ruleSetName . ':' . PHP_EOL . PHP_EOL;
 
             foreach ($ruleGroup as $ruleName => $violations) {
-
                 $totalInRuleName = 0;
 
                 $fileOutput .= '= ' . $ruleName . ':' . PHP_EOL;
@@ -66,25 +61,18 @@ foreach ($convertedResults as $group => $convertedResult) {
                     $totalInRuleSet++;
                     $totalInRuleName++;
                 }
-                $fileOutput .= 'TOTAL violations for ' . $ruleName . ' '. $totalInRuleName . PHP_EOL . PHP_EOL;
+                $fileOutput .= 'TOTAL violations for ' . $ruleName . ' ' . $totalInRuleName . PHP_EOL . PHP_EOL;
             }
 
-            $fileOutput .= 'TOTAL violations for ' . $ruleSetName . ' '. $totalInRuleSet . PHP_EOL . PHP_EOL;
+            $fileOutput .= 'TOTAL violations for ' . $ruleSetName . ' ' . $totalInRuleSet . PHP_EOL . PHP_EOL;
         }
 
-        $fileOutput .= 'TOTAL violations for ' . $priorityValue . ' '. $totalInPriority . PHP_EOL . PHP_EOL;
+        $fileOutput .= 'TOTAL violations for ' . $priorityValue . ' ' . $totalInPriority . PHP_EOL . PHP_EOL;
     }
 
-    $fileOutput .= 'TOTAL violations for ' . $group . ' '. $totalInGroup . PHP_EOL . PHP_EOL;
+    $fileOutput .= 'TOTAL violations for ' . $group . ' ' . $totalInGroup . PHP_EOL . PHP_EOL;
 }
 
 echo $fileOutput;
 
 file_put_contents('formatted-results.txt', $fileOutput);
-
-
-
-
-
-
-

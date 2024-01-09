@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * Copyright © 2016-present Spryker Systems GmbH. All rights reserved.
+ * Use of this software requires acceptance of the Evaluation License Agreement. See LICENSE file.
+ */
+
 namespace ProjectArchitectureSniffer\Project\Client;
 
 use PHPMD\AbstractNode;
@@ -8,8 +13,16 @@ use PHPMD\Rule\MethodAware;
 
 class UnusedZedRequestInSearchAndStorageRule extends AbstractRule implements MethodAware
 {
+    /**
+     * @var string
+     */
     protected const ZED_REQUEST_METHOD_NAME = '/^(zedRequest)$/';
 
+    /**
+     * @param \PHPMD\AbstractNode $node
+     *
+     * @return void
+     */
     public function apply(AbstractNode $node): void
     {
         if (!$this->isSearchOrStorageClientDependencyProvider($node)) {
@@ -44,7 +57,6 @@ class UnusedZedRequestInSearchAndStorageRule extends AbstractRule implements Met
     {
         $parent = $node->getNode()->getParent();
         $className = $parent->getNamespaceName() . '\\' . $parent->getName();
-
 
         if (preg_match('/\\\\' . 'Client' . '\\\\.*\\\\\w+(?:Search|Storage)DependencyProvider$/', $className)) {
             return true;
