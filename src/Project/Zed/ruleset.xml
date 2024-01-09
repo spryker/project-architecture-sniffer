@@ -128,10 +128,30 @@
         <priority>5</priority>
     </rule>
 
+
+    <!-- CUSTOM PROJECT ARCHITECTURE RULES -->
+
     <rule
-        name="SpyEntityUsageRule"
-        message="Zed Persistence Layer - Spy Entity: {0}"
-        class="ArchitectureSniffer\Zed\Persistence\SpyEntityUsageRule">
+        name="OrmNewEntityNotInCommunicationRule"
+        message="Access: {0}"
+        class="ProjectArchitectureSniffer\Project\Zed\OrmNewEntityNotInCommunicationRule">
+
+        <priority>2</priority>
+    </rule>
+
+    <rule
+        name="RepositoryReadOnlyRule"
+        message="Repository: {0}"
+        class="ProjectArchitectureSniffer\Project\Zed\RepositoryReadOnlyRule">
+
+        <priority>2</priority>
+    </rule>
+
+
+    <rule
+        name="OrmAccessRule"
+        message="Access: {0}"
+        class="ProjectArchitectureSniffer\Project\Zed\OrmAccessRule">
 
         <priority>2</priority>
     </rule>

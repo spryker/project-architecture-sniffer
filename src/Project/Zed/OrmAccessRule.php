@@ -1,13 +1,13 @@
 <?php
 
-namespace ProjectArchitectureSniffer\Project\Common;
+namespace ProjectArchitectureSniffer\Project\Zed;
 
 use PHPMD\AbstractNode;
 use PHPMD\AbstractRule;
 use PHPMD\Node\ClassNode;
 use PHPMD\Rule\ClassAware;
 
-class OrmQueryAccessRule extends AbstractRule implements ClassAware
+class OrmAccessRule extends AbstractRule implements ClassAware
 {
     /**
      * @var array
@@ -19,9 +19,14 @@ class OrmQueryAccessRule extends AbstractRule implements ClassAware
             '{type} {source} accesses {target} which violates rule "No call from Orm Query to Zed Business"',
         ],
         [
+            '(^[\w]+\\\\Zed\\\\(?!.*(?:DataImport|Storage|Search))[\w]+\\\\Business\\\\.+)',
+            '(^Orm\\\\Zed\\\\[\w]+\\\\Persistence\\\\(?!.*(?:(Query|TableMap))))',
+            '{type} {source} accesses {target} which violates rule "No call from Orm Entity to Zed Business"',
+        ],
+        [
             '(^[\w]+\\\\Zed\\\\[\w]+\\\\Communication\\\\.+)',
             '(^Orm\\\\Zed\\\\[\w]+\\\\Persistence\\\\[\w]+Query)',
-            '{type} {source} accesses {target} which violates rule "No call from  Orm Query to Zed Communication"',
+            '{type} {source} accesses {target} which violates rule "No call from Orm Query to Zed Communication"',
         ],
     ];
 

@@ -209,9 +209,25 @@
     </rule>
 
     <rule
-        name="OrmQueryAccessRule"
-        message="Access: {0}"
-        class="ProjectArchitectureSniffer\Project\Common\OrmQueryAccessRule">
+        name="WeirdModuleNameRule"
+        message="Name: {0}"
+        class="ProjectArchitectureSniffer\Project\Common\WeirdModuleNameRule">
+
+        <priority>2</priority>
+    </rule>
+
+    <rule
+        name="ProjectNoBridgeRule"
+        message="Bridge: {0}"
+        class="ProjectArchitectureSniffer\Project\Common\ProjectNoBridgeRule">
+
+        <priority>3</priority>
+    </rule>
+
+    <rule
+        name="InstanceResolvingRule"
+        message="{0}"
+        class="ProjectArchitectureSniffer\Project\Common\InstanceResolvingRule">
 
         <priority>2</priority>
     </rule>

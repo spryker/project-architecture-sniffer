@@ -47,6 +47,11 @@ class LayerAccessRule extends AbstractRule implements ClassAware
             '(^[\w]+\\\\Zed\\\\[\w]+\\\\(Persistence|Presentation)\\\\.+)',
             '{type} {source} accesses {target} which violates rule "No call from Zed Persistence|Presentation to Glue"',
         ],
+        [
+            '(^[\w]+\\\\Glue\\\\.+)',
+            '(^Orm\\\\Zed\\\\.+)',
+            '{type} {source} accesses {target} which violates rule "No call from Zed Persistence|Presentation to Glue"',
+        ],
 
         // Shared
         [
