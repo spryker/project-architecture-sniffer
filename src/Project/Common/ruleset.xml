@@ -143,45 +143,6 @@
     </rule>
     <!-- EOF COMMON COMMUNICATION PLUGIN RULES -->
 
-    <!-- COMMON BRIDGE RULES -->
-    <rule
-            name="BridgeNameRule"
-            message="Bridges: {0}"
-            class="ArchitectureSniffer\Common\Bridge\BridgeNameRule">
-
-        <priority>5</priority>
-    </rule>
-    <rule
-            name="BridgePathRule"
-            message="Bridges: {0}"
-            class="ArchitectureSniffer\Common\Bridge\BridgePathRule">
-
-        <priority>5</priority>
-    </rule>
-    <rule
-            name="BridgeMethodsRule"
-            message="Bridges: {0}"
-            class="ArchitectureSniffer\Common\Bridge\BridgeMethodsRule">
-
-        <priority>5</priority>
-    </rule>
-    <rule
-        name="BridgeFacadeMethodsRule"
-        message="Bridges: {0}"
-        class="ArchitectureSniffer\Common\Bridge\BridgeFacadeMethodsRule">
-
-        <priority>5</priority>
-    </rule>
-    <rule
-        name="BridgeMethodsInterfaceRule"
-        message="Bridges: {0}"
-        class="ArchitectureSniffer\Common\Bridge\BridgeMethodsInterfaceRule">
-
-        <priority>5</priority>
-    </rule>
-
-    <!-- EOF COMMON BRIDGE RULES -->
-
     <!-- EOF COMMON COMMUNICATION RULES -->
 
 
