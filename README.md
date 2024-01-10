@@ -142,7 +142,7 @@ composer cs-fix
 
 ```
 
-If you want to run phpstan
+If you want to run phpstan 
 
 ```
 
