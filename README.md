@@ -5,7 +5,7 @@
 
 [//]: # ([![Total Downloads]&#40;https://poser.pugx.org/spryker/architecture-sniffer/d/total.svg&#41;]&#40;https://packagist.org/packages/spryker/architecture-sniffer&#41;)
 
-Architecture Sniffer for Spryker projects. Over ``80`` rules adapted for Spryker Project.
+Architecture Sniffer for Spryker Projects. Over `80` rules adapted for Spryker Projects.
 
 
 ## Priority Levels
@@ -37,7 +37,7 @@ Note: Lower priorities (higher numbers) always include the higher priorities (lo
 
 Make sure you include the sniffer as `require-dev` dependency:
 ```
-composer require --dev vitaliiivanovspryker/project-architecture-sniffer:dev-main
+composer require --dev spryker/project-architecture-sniffer:dev-main
 ```
 
 ### Spryker Usage
@@ -51,7 +51,7 @@ class DevelopmentConfig extends \Spryker\Zed\Development\DevelopmentConfig
     {
         $vendorDir = APPLICATION_VENDOR_DIR . DIRECTORY_SEPARATOR;
 
-        return $vendorDir . 'vitaliiivanovspryker/project-architecture-sniffer/src/ruleset.xml';
+        return $vendorDir . 'spryker/project-architecture-sniffer/src/ruleset.xml';
     }
 }
 ```
@@ -73,7 +73,7 @@ You can also manually run the Project Architecture Sniffer from console by using
 
 ```
 
-vendor/bin/phpmd src/Pyz/ (xml|text|html) vendor/vitaliiivanovspryker/project-architecture-sniffer/src/ruleset.xml --minimumpriority 2
+vendor/bin/phpmd src/Pyz/ (xml|text|html) vendor/spryker/project-architecture-sniffer/src/ruleset.xml --minimumpriority 2
 
 ```
 
@@ -81,9 +81,9 @@ vendor/bin/phpmd src/Pyz/ (xml|text|html) vendor/vitaliiivanovspryker/project-ar
 
 ```
 
-vendor/bin/phpmd src json vendor/vitaliiivanovspryker/project-architecture-sniffer/src/ruleset.xml --minimumpriority 4 --reportfile results.json
+vendor/bin/phpmd src json vendor/spryker/project-architecture-sniffer/src/ruleset.xml --minimumpriority 4 --reportfile results.json
 
-cp vendor/vitaliiivanovspryker/project-architecture-sniffer/tools/script.php script.php
+cp vendor/spryker/project-architecture-sniffer/tools/script.php script.php
 
 php script.php
 
@@ -94,7 +94,7 @@ php script.php
 ```
 docker/sdk cli -x
 
-PHPMD_ALLOW_XDEBUG=true vendor/bin/phpmd src/Pyz/ (xml|text|html) vendor/vitaliiivanovspryker/project-architecture-sniffer/src/ruleset.xml --minimumpriority 2
+PHPMD_ALLOW_XDEBUG=true vendor/bin/phpmd src/Pyz/ (xml|text|html) vendor/spryker/project-architecture-sniffer/src/ruleset.xml --minimumpriority 2
 
 ```
 

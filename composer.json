@@ -1,5 +1,5 @@
 {
-  "name": "vitaliiivanovspryker/project-architecture-sniffer",
+  "name": "spryker/project-architecture-sniffer",
   "type": "library",
   "description": "Spryker Project Architecture Sniffer",
   "homepage": "https://spryker.com",
@@ -37,7 +37,7 @@
     }
   ],
   "support": {
-    "source": "https://github.com/vitaliiivanovspryker/project-architecture-sniffer"
+    "source": "https://github.com/spryker/project-architecture-sniffer"
   },
   "autoload": {
     "psr-4": {
