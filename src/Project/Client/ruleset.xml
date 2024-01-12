@@ -15,7 +15,7 @@
         message="Client: {0}"
         class="ArchitectureSniffer\Client\ClientRule">
 
-        <priority>5</priority>
+        <priority>3</priority>
     </rule>
 
     <rule
@@ -32,14 +32,6 @@
         class="ArchitectureSniffer\Client\DependencyProvider\DependencyProviderMethodNameRule">
 
         <priority>3</priority>
-    </rule>
-
-    <rule
-        name="NoClientInFrontendModuleRule"
-        message="Client: {0}"
-        class="ArchitectureSniffer\Client\NoClientInFrontendModuleRule">
-
-        <priority>2</priority>
     </rule>
 
 

@@ -23,7 +23,7 @@
             message="{0}"
             class="ArchitectureSniffer\Common\Method\GetterReturnTypeRule">
 
-        <priority>3</priority>
+        <priority>5</priority>
     </rule>
 
     <rule
@@ -39,7 +39,7 @@
             message="{0}"
             class="ArchitectureSniffer\Common\Method\ExternalMethodExtensionReturnTypeRule">
 
-        <priority>4</priority>
+        <priority>3</priority>
     </rule>
 
     <!-- COMMON FACTORY RULES -->
