@@ -49,6 +49,10 @@ class InstanceResolvingRule extends AbstractRule implements ClassAware
 
                 $reference = $expression->getFirstChildOfType('ClassReference');
 
+                if (!$reference) {
+                    continue;
+                }
+
                 $referenceName = trim($reference->getName(), '\\');
 
                 if (preg_match(static::INSTANCE_PATTERN, $referenceName)) {
