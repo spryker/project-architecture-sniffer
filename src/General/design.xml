@@ -10,18 +10,6 @@
         The Design Ruleset contains a collection of rules that find software design related problems.
     </description>
 
-    <rule ref="vendor/phpmd/phpmd/src/main/resources/rulesets/design.xml/ExitExpression">
-        <priority>4</priority>
-    </rule>
-
-    <rule ref="vendor/phpmd/phpmd/src/main/resources/rulesets/design.xml/EvalExpression">
-        <priority>4</priority>
-    </rule>
-
-    <rule ref="vendor/phpmd/phpmd/src/main/resources/rulesets/design.xml/GotoStatement">
-        <priority>4</priority>
-    </rule>
-
     <rule ref="vendor/phpmd/phpmd/src/main/resources/rulesets/design.xml/NumberOfChildren">
         <priority>3</priority>
     </rule>
@@ -30,12 +18,24 @@
         <priority>3</priority>
     </rule>
 
-    <rule ref="vendor/phpmd/phpmd/src/main/resources/rulesets/design.xml/DevelopmentCodeFragment">
+    <rule ref="vendor/phpmd/phpmd/src/main/resources/rulesets/design.xml/ExitExpression">
         <priority>4</priority>
     </rule>
 
-    <rule ref="vendor/phpmd/phpmd/src/main/resources/rulesets/design.xml/EmptyCatchBlock">
+    <rule ref="vendor/phpmd/phpmd/src/main/resources/rulesets/design.xml/EvalExpression">
+        <priority>2</priority>
+    </rule>
+
+    <rule ref="vendor/phpmd/phpmd/src/main/resources/rulesets/design.xml/GotoStatement">
         <priority>4</priority>
+    </rule>
+
+    <rule ref="vendor/phpmd/phpmd/src/main/resources/rulesets/design.xml/DevelopmentCodeFragment">
+        <priority>2</priority>
+    </rule>
+
+    <rule ref="vendor/phpmd/phpmd/src/main/resources/rulesets/design.xml/EmptyCatchBlock">
+        <priority>3</priority>
     </rule>
 
 </ruleset>
