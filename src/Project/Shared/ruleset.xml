@@ -15,7 +15,7 @@
             message="Shared Module Constants: {0}"
             class="ArchitectureSniffer\Shared\ModuleConstantsPathRule">
 
-        <priority>3</priority>
+        <priority>4</priority>
     </rule>
 
     <rule
@@ -23,7 +23,7 @@
             message="Shared Module Constants: {0}"
             class="ArchitectureSniffer\Shared\ModuleConstantsTypeRule">
 
-        <priority>3</priority>
+        <priority>4</priority>
     </rule>
 
     <rule
@@ -31,7 +31,7 @@
         message="Shared Module Constants: {0}"
         class="ArchitectureSniffer\Shared\ModuleConstantsNoMethodAllowedRule">
 
-        <priority>3</priority>
+        <priority>4</priority>
     </rule>
 
     <rule
