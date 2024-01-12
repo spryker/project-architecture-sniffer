@@ -29,9 +29,9 @@ Note: Lower priorities (higher numbers) always include the higher priorities (lo
 
 ## Content
 
-- `36` adapted PHPMD rules [here](documentations/PHPMDrules.md)
-- `38` adapted Spryker Architecture sniffer rules
-- `10` new Project level rules
+- `36` adapted [PHPMD rules](documentations/PHPMDrules.md)
+- `38` adapted [Spryker Architecture sniffer rules](documentations/SPRYKERrules.md)
+- `10` new [Project Architecture sniffer rules](documentations/PROJECTrules.md)
 
 ## Usage
 

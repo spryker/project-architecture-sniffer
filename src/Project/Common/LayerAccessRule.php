@@ -19,20 +19,20 @@ class LayerAccessRule extends AbstractRule implements ClassAware
      */
     public function getDescription()
     {
-        return 'Some layers must not call other layers: '
-            . 'No call from Zed|Glue to Yves'
-            . 'No call from Glue|Yves|Zed to Client'
-            . 'No call from Yves to Glue'
-            . 'No call from Zed Persistence|Presentation to Glue'
-            . 'No call from Zed Persistence|Presentation to Glue'
-            . 'No call from Zed|Client|Yves|Glue|Service to Shared'
-            . 'No call from Zed|Client|Yves|Glue to Service'
-            . 'No call from Yves|Glue to Zed'
-            . 'No call from Zed Presentation to Zed Business'
-            . 'No call from Zed Presentation to Zed Communication'
-            . 'No call from Zed Business|Communication|Presentation to Zed Persistence'
-            . 'No call from Client to Zed Persistence'
-            . 'No call from Zed|Client|Yves|Glue|Service|Shared to Zed Presentation';
+        return 'Some layers must not call other layers:'
+            . ' No call from Zed|Glue to Yves'
+            . ', No call from Glue|Yves|Zed to Client'
+            . ', No call from Yves to Glue'
+            . ', No call from Zed Persistence|Presentation to Glue'
+            . ', No call from Zed Persistence|Presentation to Glue'
+            . ', No call from Zed|Client|Yves|Glue|Service to Shared'
+            . ', No call from Zed|Client|Yves|Glue to Service'
+            . ', No call from Yves|Glue to Zed'
+            . ', No call from Zed Presentation to Zed Business'
+            . ', No call from Zed Presentation to Zed Communication'
+            . ', No call from Zed Business|Communication|Presentation to Zed Persistence'
+            . ', No call from Client to Zed Persistence'
+            . ', No call from Zed|Client|Yves|Glue|Service|Shared to Zed Presentation.';
     }
 
     /**
