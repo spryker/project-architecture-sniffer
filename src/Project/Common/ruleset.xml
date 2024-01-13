@@ -193,4 +193,15 @@
         <priority>2</priority>
     </rule>
 
+    <rule name="TooManyPublicMethods"
+          message="{0}"
+          class="ProjectArchitectureSniffer\Project\Common\TooManyPublicMethods">
+        <priority>2</priority>
+        <properties>
+            <property name="maxmethods" description="The method count reporting threshold" value="8"/>
+            <property name="ignoremethodpattern" description="Ignore methods matching this regex" value="((^(set|get|add|create|provide|is|has))|[\w]+Action$)"/>
+            <property name="ignoreclasspattern" description="Ignore class matching this regex" value="((^[\w]+\\Zed\\[\w]+\\Business\\[\w]+Facade)|(^[\w]+\\Zed\\[\w]+\\Persistence\\.+)|(^[\w]+\\Service\\[\w]+\\[\w]+Service)|(^[\w]+\\Client\\[\w]+\\[\w]+Client)|(^[\w]+\\Client\\[\w]+\\.+Stub$))"/>
+        </properties>
+    </rule>
+
 </ruleset>
