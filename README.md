@@ -31,7 +31,7 @@ Note: Lower priorities (higher numbers) always include the higher priorities (lo
 
 - `36` adapted [PHPMD rules](documentations/PHPMDrules.md)
 - `39` adapted [Spryker Architecture sniffer rules](documentations/SPRYKERrules.md)
-- `11` new [Project Architecture sniffer rules](documentations/PROJECTrules.md)
+- `12` new [Project Architecture sniffer rules](documentations/PROJECTrules.md)
 
 ## Usage
 

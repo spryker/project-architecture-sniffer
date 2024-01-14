@@ -138,11 +138,18 @@
         <priority>2</priority>
     </rule>
 
-
     <rule
         name="OrmAccessRule"
         message="Access: {0}"
         class="ProjectArchitectureSniffer\Project\Zed\OrmAccessRule">
+
+        <priority>2</priority>
+    </rule>
+
+    <rule
+        name="RestrictedOrmQueryAccessInZedPersistenceRule"
+        message="Access: {0}"
+        class="ProjectArchitectureSniffer\Project\Zed\RestrictedOrmQueryAccessInZedPersistenceRule">
 
         <priority>2</priority>
     </rule>
