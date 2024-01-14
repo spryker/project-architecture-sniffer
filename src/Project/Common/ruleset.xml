@@ -193,9 +193,9 @@
         <priority>2</priority>
     </rule>
 
-    <rule name="TooManyPublicMethods"
+    <rule name="TooManyPublicMethodsRule"
           message="{0}"
-          class="ProjectArchitectureSniffer\Project\Common\TooManyPublicMethods">
+          class="ProjectArchitectureSniffer\Project\Common\TooManyPublicMethodsRule">
         <priority>2</priority>
         <properties>
             <property name="maxmethods" description="The method count reporting threshold" value="8"/>

@@ -12,7 +12,7 @@ use PHPMD\AbstractRule;
 use PHPMD\Node\AbstractTypeNode;
 use PHPMD\Rule\ClassAware;
 
-class TooManyPublicMethods extends AbstractRule implements ClassAware
+class TooManyPublicMethodsRule extends AbstractRule implements ClassAware
 {
     /**
      * @var string
