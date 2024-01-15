@@ -51,7 +51,19 @@ class DevelopmentConfig extends \Spryker\Zed\Development\DevelopmentConfig
     {
         $vendorDir = APPLICATION_VENDOR_DIR . DIRECTORY_SEPARATOR;
 
-        return $vendorDir . 'spryker/project-architecture-sniffer/src/ruleset.xml';
+        return $vendorDir . 'spryker/project-architecture-sniffer/src/Project/ruleset.xml';
+    }
+
+    public function getArchitectureSnifferDefaultPriority(): int
+    {
+        return 3;
+    }
+
+    public function getArchitectureStandard(): string
+    {
+        $vendorDir = APPLICATION_VENDOR_DIR . DIRECTORY_SEPARATOR;
+
+        return $vendorDir . 'spryker/project-architecture-sniffer/src/PhpMd/ruleset.xml';
     }
 }
 ```
@@ -61,6 +73,8 @@ When using Spryker you can use the Spryker CLI console command for it:
 ```
 
 console code:sniff:architecture [-m ModuleName] [optional-sub-path] -v [-p priority]
+
+console code:phpmd [-m ModuleName]
 
 ```
 

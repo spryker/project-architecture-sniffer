@@ -19,13 +19,6 @@
     <exclude-pattern>*/Orm/*</exclude-pattern>
     <exclude-pattern>*/Generated/*</exclude-pattern>
 
-    <rule ref="PhpMd/cleancode.xml" />
-    <rule ref="PhpMd/codesize.xml" />
-    <rule ref="PhpMd/controversial.xml" />
-    <rule ref="PhpMd/design.xml" />
-    <rule ref="PhpMd/naming.xml" />
-    <rule ref="PhpMd/unusedcode.xml" />
-
     <rule ref="Project/Client/ruleset.xml" />
     <rule ref="Project/Service/ruleset.xml" />
     <rule ref="Project/Shared/ruleset.xml" />

@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<ruleset name="Spryker Project"
+<ruleset name="Spryker Project PHPMD stantarts"
          xmlns="http://pmd.sf.net/ruleset/1.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://pmd.sf.net/ruleset/1.0.0
@@ -25,12 +25,5 @@
     <rule ref="PhpMd/design.xml" />
     <rule ref="PhpMd/naming.xml" />
     <rule ref="PhpMd/unusedcode.xml" />
-
-    <rule ref="Project/Client/ruleset.xml" />
-    <rule ref="Project/Service/ruleset.xml" />
-    <rule ref="Project/Shared/ruleset.xml" />
-    <rule ref="Project/Yves/ruleset.xml" />
-    <rule ref="Project/Zed/ruleset.xml" />
-    <rule ref="Project/Common/ruleset.xml" />
 
 </ruleset>
