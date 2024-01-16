@@ -37,7 +37,7 @@ Note: Lower priorities (higher numbers) always include the higher priorities (lo
 
 Make sure you include the sniffer as `require-dev` dependency:
 ```
-composer require --dev spryker/project-architecture-sniffer:dev-main
+composer require --dev spryker/project-architecture-sniffer
 ```
 
 ### Spryker Usage
