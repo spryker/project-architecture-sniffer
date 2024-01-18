@@ -75,11 +75,7 @@ class SingletonInstanceInDependencyProviderOnlyRule extends AbstractRule impleme
         $parent = $node->getNode()->getParent();
         $className = $parent->getNamespaceName() . '\\' . $parent->getName();
 
-        if (preg_match('/\\\\' . '(?:Client|Yves|Glue|Zed|Service)' . '\\\\.*\\\\\w+DependencyProvider$/', $className)) {
-            return true;
-        }
-
-        return false;
+        return preg_match('/\\\\' . '(?:Client|Yves|Glue|Zed|Service)' . '\\\\.*\\\\\w+DependencyProvider$/', $className) === 1;
     }
 
     /**
@@ -89,11 +85,7 @@ class SingletonInstanceInDependencyProviderOnlyRule extends AbstractRule impleme
      */
     protected function isGetInstance(string $methodName): bool
     {
-        if (preg_match(static::GET_INSTANCE_METHOD_NAME, $methodName)) {
-            return true;
-        }
-
-        return false;
+        return preg_match(static::GET_INSTANCE_METHOD_NAME, $methodName) === 1;
     }
 
     /**
@@ -103,10 +95,6 @@ class SingletonInstanceInDependencyProviderOnlyRule extends AbstractRule impleme
      */
     protected function isStaticCall(string $callSymbol): bool
     {
-        if (preg_match('::', $callSymbol)) {
-            return true;
-        }
-
-        return false;
+        return preg_match('::', $callSymbol) === 1;
     }
 }
