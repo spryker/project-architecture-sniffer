@@ -19,6 +19,11 @@ class ProjectNoBridgeRule extends AbstractRule implements ClassAware
     public const RULE = 'Project should not use and depend on Bridge pattern.';
 
     /**
+     * @var string
+     */
+    public const REGEX_BRIDGE = '/\w+Bridge$/';
+
+    /**
      * @return string
      */
     public function getDescription(): string
@@ -33,28 +38,61 @@ class ProjectNoBridgeRule extends AbstractRule implements ClassAware
      */
     public function apply(AbstractNode $node): void
     {
-        if (preg_match('([\w]+Bridge$)', $node->getFullQualifiedName()) !== 0) {
-            $this->addViolation(
-                $node,
-                [
-                    sprintf('Project should not use bridges: %s.', $node->getFullQualifiedName()),
-                ],
-            );
+        $this->applyNotUseBridge($node);
+        $this->applyNotDependOnBridges($node);
+    }
+
+    /**
+     * @param \PHPMD\AbstractRule $node
+     *
+     * @return void
+     */
+    protected function applyNotUseBridge(AbstractNode $node): void
+    {
+        if (!$this->isBridge($node->getFullQualifiedName())) {
+            return;
         }
 
+        $this->addViolation(
+            $node,
+            [
+                sprintf('Project should not use bridges: %s.', $node->getFullQualifiedName()),
+            ],
+        );
+    }
+
+    /**
+     * @param \PHPMD\AbstractNode $node
+     *
+     * @return void
+     */
+    protected function applyNotDependOnBridges(AbstractNode $node): void
+    {
         foreach ($node->getMethods() as $method) {
             foreach ($method->getDependencies() as $dependency) {
                 $targetQName = sprintf('%s\\%s', $dependency->getNamespaceName(), $dependency->getName());
 
-                if (preg_match('([\w]+Bridge$)', $targetQName) !== 0) {
-                    $this->addViolation(
-                        $method,
-                        [
-                            sprintf('Project should not depend on bridges: %s.', $targetQName),
-                        ],
-                    );
+                if (!$this->isBridge($targetQName)) {
+                    continue;
                 }
+
+                $this->addViolation(
+                    $method,
+                    [
+                        sprintf('Project should not depend on bridges: %s.', $targetQName),
+                    ],
+                );
             }
         }
+    }
+
+    /**
+     * @param string $nodeName
+     *
+     * @return bool
+     */
+    protected function isBridge(string $nodeName): bool
+    {
+        return preg_match(static::REGEX_BRIDGE, $nodeName) === 1;
     }
 }

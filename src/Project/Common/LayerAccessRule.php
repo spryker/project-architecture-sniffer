@@ -185,13 +185,13 @@ class LayerAccessRule extends AbstractRule implements ClassAware
      */
     protected function collectPatterns(ClassNode $class): array
     {
-        $patterns = [];
-        foreach ($this->patterns as [$srcPattern, $targetPattern, $message]) {
-            if (preg_match($srcPattern, $class->getNamespaceName())) {
-                $patterns[] = [$srcPattern, $targetPattern, $message];
+        return array_reduce($this->patterns, function ($collectedPatterns, $pattern) use ($class) {
+            [$srcPattern] = $pattern;
+            if (preg_match($srcPattern, $class->getNamespaceName()) === 1) {
+                $collectedPatterns[] = $pattern;
             }
-        }
 
-        return $patterns;
+            return $collectedPatterns;
+        }, []);
     }
 }

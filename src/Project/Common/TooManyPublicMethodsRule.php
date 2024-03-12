@@ -10,6 +10,7 @@ namespace ProjectArchitectureSniffer\Project\Common;
 use PHPMD\AbstractNode;
 use PHPMD\AbstractRule;
 use PHPMD\Node\AbstractTypeNode;
+use PHPMD\Node\MethodNode;
 use PHPMD\Rule\ClassAware;
 
 class TooManyPublicMethodsRule extends AbstractRule implements ClassAware
@@ -41,9 +42,7 @@ class TooManyPublicMethodsRule extends AbstractRule implements ClassAware
     {
         $ignoreClassRegexp = $this->getStringProperty('ignoreclasspattern');
 
-        $fullClassName = $node->getFullQualifiedName();
-
-        if (preg_match($ignoreClassRegexp, $fullClassName)) {
+        if (preg_match($ignoreClassRegexp, $node->getFullQualifiedName())) {
             return;
         }
 
@@ -78,14 +77,21 @@ class TooManyPublicMethodsRule extends AbstractRule implements ClassAware
      */
     protected function countMethods(AbstractTypeNode $node): int
     {
-        $count = 0;
-        foreach ($node->getMethods() as $method) {
-            if ($method->getNode()->isPublic() && !$this->isIgnoredMethodName($method->getName())) {
-                ++$count;
-            }
-        }
+        return array_reduce(
+            $node->getMethods(),
+            fn (int $count, MethodNode $method) => $this->isMethodCountable($method) ? ++$count : $count,
+            0,
+        );
+    }
 
-        return $count;
+    /**
+     * @param \PHPMD\Node\MethodNode $method
+     *
+     * @return bool
+     */
+    protected function isMethodCountable(MethodNode $method): bool
+    {
+        return $method->getNode()->isPublic() && !$this->isIgnoredMethodName($method->getName());
     }
 
     /**

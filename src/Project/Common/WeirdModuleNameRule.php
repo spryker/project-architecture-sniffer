@@ -29,7 +29,7 @@ class WeirdModuleNameRule extends AbstractRule implements ClassAware
     /**
      * @var string
      */
-    protected const WEIRD_MODULE_NAME_PATTER = '(^[\w]+\\\\(Zed|Client|Yves|Glue|Service|Shared)\\\\[\w]*(?i:test|dummy|example|antelope)[\w]*\\\\.+)';
+    protected const WEIRD_MODULE_NAME_PATTERN = '/^[\w]+\\\\(Zed|Client|Yves|Glue|Service|Shared)\\\\[\w]*(?i:test|dummy|example|antelope)[\w]*\\\\.+/';
 
     /**
      * @param \PHPMD\AbstractNode $node
@@ -40,7 +40,7 @@ class WeirdModuleNameRule extends AbstractRule implements ClassAware
     {
         $classFullName = $node->getFullQualifiedName();
 
-        if (preg_match(static::WEIRD_MODULE_NAME_PATTER, $classFullName) === 0) {
+        if (!$this->isWeirdClassName($classFullName)) {
             return;
         }
 
@@ -50,5 +50,15 @@ class WeirdModuleNameRule extends AbstractRule implements ClassAware
                 sprintf('Module name %s should not contain weird words: test|dummy|example|antelope.', $classFullName),
             ],
         );
+    }
+
+    /**
+     * @param string $classFullName
+     *
+     * @return bool
+     */
+    protected function isWeirdClassName(string $classFullName): bool
+    {
+        return preg_match(static::WEIRD_MODULE_NAME_PATTERN, $classFullName) === 1;
     }
 }

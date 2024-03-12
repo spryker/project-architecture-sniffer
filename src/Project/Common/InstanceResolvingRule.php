@@ -29,7 +29,7 @@ class InstanceResolvingRule extends AbstractRule implements ClassAware
     /**
      * @var string
      */
-    protected const INSTANCE_PATTERN = '([\w]+(Repository|EntityManager|QueryContainer|Facade|DependencyProvider|Client|Service)$)';
+    protected const INSTANCE_PATTERN = '/\w+(Repository|EntityManager|QueryContainer|Facade|DependencyProvider|Client|Service)$/';
 
     /**
      * @param \PHPMD\AbstractNode $node
@@ -55,15 +55,21 @@ class InstanceResolvingRule extends AbstractRule implements ClassAware
 
                 $referenceName = trim($reference->getName(), '\\');
 
-                if (preg_match(static::INSTANCE_PATTERN, $referenceName)) {
-                    $message = sprintf(
-                        'Entity `%s` is initialized in method `%s`. %s',
-                        $referenceName,
-                        $methodName,
-                        static::RULE,
-                    );
-                    $this->addViolation($methodNode, [$message]);
+                if (preg_match(static::INSTANCE_PATTERN, $referenceName) !== 1) {
+                    continue;
                 }
+
+                $this->addViolation(
+                    $methodNode,
+                    [
+                        sprintf(
+                            'Entity `%s` is initialized in method `%s`. %s',
+                            $referenceName,
+                            $methodName,
+                            static::RULE,
+                        ),
+                    ],
+                );
             }
         }
     }
