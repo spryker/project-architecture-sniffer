@@ -28,27 +28,11 @@
     </rule>
 
     <rule
-            name="FacadeArgumentsRule"
-            message="Zed Business Layer - Facade: {0}"
-            class="ArchitectureSniffer\Zed\Business\Facade\FacadeArgumentsRule">
-
-        <priority>5</priority>
-    </rule>
-
-    <rule
             name="FacadeNoLogicRule"
             message="Zed Business Layer - Facade: {0}"
             class="ArchitectureSniffer\Zed\Business\Facade\FacadeNoLogicRule">
 
         <priority>2</priority>
-    </rule>
-
-    <rule
-            name="FacadeReturnValueRule"
-            message="Zed Business Layer - Facade: {0}"
-            class="ArchitectureSniffer\Zed\Business\Facade\FacadeReturnValueRule">
-
-        <priority>5</priority>
     </rule>
 
     <rule
@@ -84,14 +68,6 @@
         <priority>3</priority>
     </rule>
 
-    <!-- BUSINESS DIRECTORY RULES -->
-    <rule
-            name="ZedBusinessDirectoryNoModelRule"
-            message="Zed Business - Directory: {0}"
-            class="ArchitectureSniffer\Zed\Business\Directory\DirectoryNoModelRule">
-
-        <priority>5</priority>
-    </rule>
 
     <!-- COMMUNICATION PLUGIN RULES -->
     <rule
@@ -108,7 +84,7 @@
         message="Zed DependencyProvider - DependencyProvider: {0}"
         class="ArchitectureSniffer\Zed\DependencyProvider\DependencyProviderPropelQueryConstantNameRule">
 
-        <priority>5</priority>
+        <priority>4</priority>
     </rule>
 
     <rule
@@ -116,7 +92,7 @@
         message="Zed DependencyProvider - DependencyProvider: {0}"
         class="ArchitectureSniffer\Zed\DependencyProvider\DependencyProviderPropelQueryMethodNameRule">
 
-        <priority>5</priority>
+        <priority>4</priority>
     </rule>
 
 

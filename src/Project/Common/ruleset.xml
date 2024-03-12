@@ -11,22 +11,6 @@
     </description>
 
     <rule
-            name="ImplementsApiInheritDocRule"
-            message="Access: {0}"
-            class="ArchitectureSniffer\Common\ImplementsApiInheritDocRule">
-
-        <priority>5</priority>
-    </rule>
-
-    <rule
-            name="GetterReturnTypeRule"
-            message="{0}"
-            class="ArchitectureSniffer\Common\Method\GetterReturnTypeRule">
-
-        <priority>5</priority>
-    </rule>
-
-    <rule
             name="ExistsPostfixRule"
             message="{0}"
             class="ArchitectureSniffer\Common\Method\ExistsPostfixRule">
@@ -49,14 +33,6 @@
             class="ArchitectureSniffer\Common\Factory\FactoryGetContainNoNewRule">
 
         <priority>3</priority>
-    </rule>
-
-    <rule
-            name="FactoryMethodReturnInterfaceRule"
-            message="{0}"
-            class="ArchitectureSniffer\Common\Factory\FactoryMethodReturnInterfaceRule">
-
-        <priority>5</priority>
     </rule>
 
     <rule
@@ -134,13 +110,6 @@
         <priority>3</priority>
     </rule>
 
-    <rule
-            name="NewPluginExtensionModuleRule"
-            message="Plugin: {0}"
-            class="ArchitectureSniffer\Common\Plugin\NewPluginExtensionModuleRule">
-
-        <priority>4</priority>
-    </rule>
     <!-- EOF COMMON COMMUNICATION PLUGIN RULES -->
 
     <!-- EOF COMMON COMMUNICATION RULES -->
@@ -190,7 +159,7 @@
         message="{0}"
         class="ProjectArchitectureSniffer\Project\Common\InstanceResolvingRule">
 
-        <priority>2</priority>
+        <priority>1</priority>
     </rule>
 
     <rule name="TooManyPublicMethodsRule"

@@ -25,13 +25,6 @@
         </properties>
     </rule>
 
-    <rule ref="vendor/phpmd/phpmd/src/main/resources/rulesets/codesize.xml/ExcessiveMethodLength">
-        <priority>3</priority>
-        <properties>
-            <property name="minimum" description="The method size reporting threshold" value="128"/>
-        </properties>
-    </rule>
-
     <rule ref="vendor/phpmd/phpmd/src/main/resources/rulesets/codesize.xml/ExcessiveParameterList">
         <priority>3</priority>
         <properties>

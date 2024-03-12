@@ -34,12 +34,4 @@
         <priority>4</priority>
     </rule>
 
-    <rule
-        name="ModuleConstantsFormingConstantValuesRule"
-        message="Shared Module Constants: {0}"
-        class="ArchitectureSniffer\Shared\ModuleConstantsFormingConstantValuesRule">
-
-        <priority>5</priority>
-    </rule>
-
 </ruleset>

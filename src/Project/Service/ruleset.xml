@@ -13,15 +13,7 @@
         message="Service: {0}"
         class="ArchitectureSniffer\Service\ServiceRule">
 
-        <priority>5</priority>
-    </rule>
-
-    <rule
-        name="ServiceInterfaceRule"
-        message="ServiceInterface: {0}"
-        class="ArchitectureSniffer\Service\ServiceInterfaceRule">
-
-        <priority>5</priority>
+        <priority>3</priority>
     </rule>
 
     <rule

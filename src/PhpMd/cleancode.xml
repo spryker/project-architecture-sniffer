@@ -11,7 +11,7 @@
     </description>
 
     <rule ref="vendor/phpmd/phpmd/src/main/resources/rulesets/cleancode.xml/UndefinedVariable" >
-        <priority>2</priority>
+        <priority>1</priority>
     </rule>
 
     <rule ref="vendor/phpmd/phpmd/src/main/resources/rulesets/cleancode.xml/ElseExpression" >

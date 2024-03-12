@@ -11,15 +11,13 @@ Architecture Sniffer for Spryker Projects. Over `80` rules adapted for Spryker P
 ## Priority Levels
 
 
-- `1`: Сritical (stop it)
+- `1`: Сritical
 
-- `2`: Major (it is not a Spryker project)
+- `2`: Major
 
-- `3`: Medium (better to have)
+- `3`: Medium
 
-- `4`: Minor (nice to have)
-
-- `5`: Spryker Core (code matches Spryker Architecture Rules and even more)
+- `4`: Minor
 
 
 We recommend minimum priority `3` by default for local and CI checks.
@@ -29,7 +27,7 @@ Note: Lower priorities (higher numbers) always include the higher priorities (lo
 
 ## Content
 
-- `36` adapted [PHPMD rules](documentations/PHPMDrules.md)
+- `29` adapted [PHPMD rules](documentations/PHPMDrules.md)
 - `39` adapted [Spryker Architecture sniffer rules](documentations/SPRYKERrules.md)
 - `13` new [Project Architecture sniffer rules](documentations/PROJECTrules.md)
 
@@ -40,67 +38,75 @@ Make sure you include the sniffer as `require-dev` dependency:
 composer require --dev spryker/project-architecture-sniffer
 ```
 
-### Spryker Usage
+### Running
 
-```php
-namespace Pyz\Zed\Development;
+Find [command line option](https://phpmd.org/documentation/index.html).
 
-class DevelopmentConfig extends \Spryker\Zed\Development\DevelopmentConfig
-{
-    public function getArchitectureSnifferRuleset(): string
-    {
-        $vendorDir = APPLICATION_VENDOR_DIR . DIRECTORY_SEPARATOR;
-
-        return $vendorDir . 'spryker/project-architecture-sniffer/src/Project/ruleset.xml';
-    }
-
-    public function getArchitectureSnifferDefaultPriority(): int
-    {
-        return 3;
-    }
-
-    public function getArchitectureStandard(): string
-    {
-        $vendorDir = APPLICATION_VENDOR_DIR . DIRECTORY_SEPARATOR;
-
-        return $vendorDir . 'spryker/project-architecture-sniffer/src/PhpMd/ruleset.xml';
-    }
-}
+You can run the Project Architecture Sniffer from console by using:
+```
+vendor/bin/phpmd src/Pyz/ text vendor/spryker/project-architecture-sniffer/src/ruleset.xml --minimumpriority 3
 ```
 
-When using Spryker you can use the Spryker CLI console command for it:
+### Baseline
 
+Existing projectsand demo-shops may contain rule violations.
+The decision to refactor existing violations may be at the discretion of each project individually.
+It is recommended to approach this in a differentiated manner.
+To integrate rules into the project immediately, there recommended to generate a [baseline](https://phpmd.org/documentation/#baseline) and move forward.
+It is also permissible to [suppress rules](https://phpmd.org/documentation/suppress-warnings.html) on a case-by-case basis.
+
+### Ruleset
+
+#### Ruleset that contains all documented rules
 ```
-
-console code:sniff:architecture [-m ModuleName] [optional-sub-path] -v [-p priority]
-
-console code:phpmd [-m ModuleName]
-
+vendor/spryker/project-architecture-sniffer/src/ruleset.xml
 ```
-
-Verbose output is recommended here.
-
-
-### Manual Usage
-
-You can also manually run the Project Architecture Sniffer from console by using:
-
+#### Ruleset that contains [Spryker Architecture sniffer rules](documentations/SPRYKERrules.md) and [Project Architecture sniffer rules](documentations/PROJECTrules.md)
 ```
-
-vendor/bin/phpmd src/Pyz/ (xml|text|html) vendor/spryker/project-architecture-sniffer/src/ruleset.xml --minimumpriority 2
-
+vendor/spryker/project-architecture-sniffer/src/Project/ruleset.xml
+```
+#### Ruleset that contains [PHPMD rules](documentations/PHPMDrules.md)
+```
+vendor/spryker/project-architecture-sniffer/src/PhpMd/ruleset.xml
+```
+#### More
+Find `vendor/spryker/project-architecture-sniffer/src/`
+```
+├── PhpMd
+│   ├── cleancode.xml
+│   ├── codesize.xml
+│   ├── controversial.xml
+│   ├── design.xml
+│   ├── naming.xml
+│   ├── ruleset.xml
+│   └── unusedcode.xml
+├── Project
+│   ├── Client
+│   │   └── ruleset.xml
+│   ├── Common
+│   │   └── ruleset.xml
+│   ├── Glue
+│   │   └── ruleset.xml
+│   ├── Service
+│   │   └── ruleset.xml
+│   ├── Shared
+│   │   └── ruleset.xml
+│   ├── Yves
+│   │   └── ruleset.xml
+│   ├── Zed
+│   │   └── ruleset.xml
+│   └── ruleset.xml
+└── ruleset.xml
 ```
 
 ### Local Code Review Usage
 
 ```
-
 vendor/bin/phpmd src json vendor/spryker/project-architecture-sniffer/src/ruleset.xml --minimumpriority 4 --reportfile results.json
 
 cp vendor/spryker/project-architecture-sniffer/tools/script.php script.php
 
 php script.php
-
 ```
 
 ### Debugging
@@ -108,8 +114,7 @@ php script.php
 ```
 docker/sdk cli -x
 
-PHPMD_ALLOW_XDEBUG=true vendor/bin/phpmd src/Pyz/ (xml|text|html) vendor/spryker/project-architecture-sniffer/src/ruleset.xml --minimumpriority 2
-
+PHPMD_ALLOW_XDEBUG=true vendor/bin/phpmd src/Pyz/ text vendor/spryker/project-architecture-sniffer/src/ruleset.xml --minimumpriority 3
 ```
 
 ## Roadmap (expected rules)
@@ -128,9 +133,7 @@ Every sniff needs to implement either the `ClassAware`, `FunctionAware`, `Interf
 Run
 
 ```
-
 composer install
-
 ```
 
 
@@ -143,25 +146,19 @@ no testing at this moment
 Make sure this repository is Spryker coding standard conform:
 
 ```
-
 composer cs-check
-
 ```
 
 If you want to fix the fixable errors, use
 
 ```
-
 composer cs-fix
-
 ```
 
 If you want to run phpstan
 
 ```
-
 composer stan
-
 ```
 
 Once everything is green you can make a PR with your changes.

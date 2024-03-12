@@ -1,13 +1,13 @@
 ## Clean Code Rules [more](https://phpmd.org/rules/cleancode.html)
 |          Rule         | Prio |                             Description                             | Info |
 |:---------------------:|:----:|:-------------------------------------------------------------------:|:----:|
-| UndefinedVariable     |   2  |  [link](https://phpmd.org/rules/cleancode.html#undefinedvariable)   |      |
-| ElseExpression        |   3  |    [link](https://phpmd.org/rules/cleancode.html#elseexpression)     |      |
-| IfStatementAssignment |   3  | [link](https://phpmd.org/rules/cleancode.html#ifstatementassignment) |      |
-| DuplicatedArrayKey    |   3  |  [link](https://phpmd.org/rules/cleancode.html#duplicatedarraykey)   |      |
-| ErrorControlOperator  |   3  | [link](https://phpmd.org/rules/cleancode.html#errorcontroloperator)  |      |
-| MissingImport         |   3  |     [link](https://phpmd.org/rules/cleancode.html#missingimport)     |      |
-| BooleanArgumentFlag   |   4  |  [link](https://phpmd.org/rules/cleancode.html#booleanargumentflag)  |      |
+| UndefinedVariable     |  1   |  [link](https://phpmd.org/rules/cleancode.html#undefinedvariable)   |      |
+| ElseExpression        |  3   |    [link](https://phpmd.org/rules/cleancode.html#elseexpression)     |      |
+| IfStatementAssignment |  3   | [link](https://phpmd.org/rules/cleancode.html#ifstatementassignment) |      |
+| DuplicatedArrayKey    |  3   |  [link](https://phpmd.org/rules/cleancode.html#duplicatedarraykey)   |      |
+| ErrorControlOperator  |  3   | [link](https://phpmd.org/rules/cleancode.html#errorcontroloperator)  |      |
+| MissingImport         |  3   |     [link](https://phpmd.org/rules/cleancode.html#missingimport)     |      |
+| BooleanArgumentFlag   |  4   |  [link](https://phpmd.org/rules/cleancode.html#booleanargumentflag)  |      |
 
 ## Code Size Rules [more](https://phpmd.org/rules/codesize.html)
 |           Rule           | Prio |                               Description                              |                            Info                           |
@@ -15,7 +15,6 @@
 | CyclomaticComplexity     |   3  | [link](https://phpmd.org/rules/codesize.html#cyclomaticcomplexity)      |                                                           |
 | NPathComplexity          |   3  | [link](https://phpmd.org/rules/codesize.html#npathcomplexity)           |                                                           |
 | ExcessiveClassComplexity |   3  | [link](https://phpmd.org/rules/codesize.html#excessiveclasscomplexity)  | The maximum WMC tolerable for a class = 100 (50 default)  |
-| ExcessiveMethodLength    |   3  | [link](https://phpmd.org/rules/codesize.html#excessivemethodlength)     | The method size reporting threshold = 128 (100 default)   |
 | ExcessiveParameterList   |   3  | [link](https://phpmd.org/rules/codesize.html#excessiveparameterlist)    | The parameter count reporting threshold = 15 (10 default) |
 
 ## Controversial Rules [more](https://phpmd.org/rules/controversial.html)
