@@ -43,14 +43,14 @@ class LocatorInDependencyProviderOnlyRule extends AbstractRule implements Method
      */
     public function apply(AbstractNode $node): void
     {
-        if ($this->isClassAllowedToUseLocator($node) === true) {
+        if ($this->isClassAllowedToUseLocator($node)) {
             return;
         }
 
         foreach ($node->findChildrenOfType('MethodPostfix') as $classUsage) {
             $methodName = $classUsage->getNode()->getImage();
 
-            if ($this->isLocator($methodName) === false) {
+            if (!$this->isLocator($methodName)) {
                 continue;
             }
 
@@ -73,11 +73,7 @@ class LocatorInDependencyProviderOnlyRule extends AbstractRule implements Method
      */
     protected function isLocator(string $methodName): bool
     {
-        if (preg_match(static::LOCATOR_METHOD_NAMES, $methodName)) {
-            return true;
-        }
-
-        return false;
+        return preg_match(static::LOCATOR_METHOD_NAMES, $methodName) === 1;
     }
 
     /**
@@ -87,10 +83,6 @@ class LocatorInDependencyProviderOnlyRule extends AbstractRule implements Method
      */
     protected function isClassAllowedToUseLocator(AbstractNode $node): bool
     {
-        if (preg_match(static::CLASSES_ALLOWED_TO_USE_LOCATOR, $node->getParentName())) {
-            return true;
-        }
-
-        return false;
+        return preg_match(static::CLASSES_ALLOWED_TO_USE_LOCATOR, $node->getParentName()) === 1;
     }
 }
