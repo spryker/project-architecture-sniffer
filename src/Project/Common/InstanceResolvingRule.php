@@ -16,7 +16,7 @@ class InstanceResolvingRule extends AbstractRule implements ClassAware
     /**
      * @var string
      */
-    public const RULE = 'Repository|EntityManager|QueryContainer|Facade|DependencyProvider|Client|Service instances can not be initialized directly with "new". Use Dependency Provider and Resolvers';
+    public const RULE = 'Automatically resolved instances must not be initialized directly with "new". Use Dependency Provider and Resolvers.';
 
     /**
      * @return string
@@ -29,7 +29,15 @@ class InstanceResolvingRule extends AbstractRule implements ClassAware
     /**
      * @var string
      */
-    protected const INSTANCE_PATTERN = '([\w]+(Repository|EntityManager|QueryContainer|Facade|DependencyProvider|Client|Service)$)';
+    protected const INSTANCE_PATTERNS = [
+        '/^(\w+)\\\\\Zed\\\\\w+\\\\Persistence\\\\\w+(Repository|EntityManager|QueryContainer|PersistenceFactory)$/',
+        '/^(\w+)\\\\\Zed\\\\\w+\\\\Business\\\\\w+(Facade|BusinessFactory)$/',
+        '/^(\w+)\\\\\Zed\\\\\w+\\\\Communication\\\\\w+(CommunicationFactory)$/',
+        '/^(\w+)\\\\\Zed\\\\\w+\\\\\w+(Config|DependencyProvider)$/',
+        '/^(\w+)\\\\\Client\\\\\w+\\\\\w+(Client|Config|DependencyProvider)$/',
+        '/^(\w+)\\\\\Service\\\\\w+\\\\\w+(DependencyProvider|Service)$/',
+        '/^(\w+)\\\\\Glue\\\\\w+\\\\\w+(Factory|Config|DependencyProvider)$/',
+    ];
 
     /**
      * @param \PHPMD\AbstractNode $node
@@ -55,14 +63,16 @@ class InstanceResolvingRule extends AbstractRule implements ClassAware
 
                 $referenceName = trim($reference->getName(), '\\');
 
-                if (preg_match(static::INSTANCE_PATTERN, $referenceName)) {
-                    $message = sprintf(
-                        'Entity `%s` is initialized in method `%s`. %s',
-                        $referenceName,
-                        $methodName,
-                        static::RULE,
-                    );
-                    $this->addViolation($methodNode, [$message]);
+                foreach (static::INSTANCE_PATTERNS as $pattern) {
+                    if (preg_match($pattern, $referenceName)) {
+                        $message = sprintf(
+                            'Entity `%s` is initialized in method `%s`. %s',
+                            $referenceName,
+                            $methodName,
+                            static::RULE,
+                        );
+                        $this->addViolation($methodNode, [$message]);
+                    }
                 }
             }
         }
