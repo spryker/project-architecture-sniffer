@@ -4,6 +4,7 @@
   "description": "Spryker Project Architecture Sniffer",
   "homepage": "https://spryker.com",
   "license": "MIT",
+  "abandoned": "spryker/architecture-sniffer",
   "require": {
     "php": ">=8.0",
     "spryker/architecture-sniffer": "^0.5.7"
