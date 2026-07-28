@@ -14,7 +14,7 @@
 > Run the project ruleset from the main package:
 >
 > ```bash
-> vendor/bin/phpmd src/ text vendor/spryker/architecture-sniffer/src/ruleset.xml --minimumpriority 2
+> vendor/bin/phpmd src/ text vendor/spryker/architecture-sniffer/src/Project/ruleset.xml --minimumpriority 4
 > ```
 >
 > See the documentation for setup, rulesets, and priority levels:
