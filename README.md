@@ -1,5 +1,28 @@
 # Project Architecture Sniffer
 
+> ## ⚠️ DEPRECATED
+>
+> **`spryker/project-architecture-sniffer` is deprecated and no longer maintained.**
+>
+> The project architecture rules now ship as part of **`spryker/architecture-sniffer`**, which
+> provides the project ruleset directly. Use it instead:
+>
+> ```bash
+> composer require --dev spryker/architecture-sniffer
+> ```
+>
+> Run the project ruleset from the main package:
+>
+> ```bash
+> vendor/bin/phpmd src/ text vendor/spryker/architecture-sniffer/src/ruleset.xml --minimumpriority 2
+> ```
+>
+> See the documentation for setup, rulesets, and priority levels:
+> **https://docs.spryker.com/docs/dg/dev/sdks/sdk/development-tools/architecture-sniffer**
+>
+> This repository remains available for reference only. No further updates, rules, or fixes will
+> be published here.
+
 [![Minimum PHP Version](https://img.shields.io/badge/php-%3E%3D%208.0-8892BF.svg)](https://php.net/)
 [![License](https://poser.pugx.org/spryker/architecture-sniffer/license.svg)](https://packagist.org/packages/spryker/architecture-sniffer)
 
